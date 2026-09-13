@@ -1,3 +1,5 @@
+![LM Studio Local MCP — modèles, connecteurs et RAG, bannière vert et crème](assets/banner-lmstudio-mcp.png)
+
 # LM Studio ↔ Codex — MCP 2.0
 
 Serveur MCP indépendant pour administrer LM Studio et utiliser des modèles locaux depuis un client MCP. Il utilise l’API native `/api/v1`, l’API compatible OpenAI, la commande officielle `lms` et le SDK Python officiel. Il expose **28 outils** : administration, inférence, réglages, documentation, connecteurs et RAG. Les versions Python sont verrouillées dans `uv.lock`.
