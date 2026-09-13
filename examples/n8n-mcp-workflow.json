@@ -1,0 +1,96 @@
+{
+  "name": "LM Studio local — diagnostic et conversation MCP",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "manual",
+      "name": "Démarrer",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "serverTransport": "httpStreamable",
+        "endpointUrl": "http://127.0.0.1:8765/mcp",
+        "authentication": "none",
+        "tool": {
+          "__rl": true,
+          "mode": "id",
+          "value": "lm_status"
+        },
+        "inputMode": "json",
+        "jsonInput": "{\"refresh_updates\":false}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "diagnostic",
+      "name": "Diagnostic LM Studio",
+      "type": "@n8n/n8n-nodes-langchain.mcpClient",
+      "typeVersion": 1.1,
+      "position": [
+        240,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "serverTransport": "httpStreamable",
+        "endpointUrl": "http://127.0.0.1:8765/mcp",
+        "authentication": "none",
+        "tool": {
+          "__rl": true,
+          "mode": "id",
+          "value": "lm_chat"
+        },
+        "inputMode": "json",
+        "jsonInput": "{\"model\": \"google/gemma-4-e4b\", \"input\": \"Explique en deux phrases ce que permet une automatisation n8n avec un modèle local.\", \"options\": {\"reasoning\": \"off\", \"max_output_tokens\": 128, \"store\": false}}",
+        "options": {
+          "timeout": 360000
+        }
+      },
+      "id": "chat",
+      "name": "Interroger le modèle local",
+      "type": "@n8n/n8n-nodes-langchain.mcpClient",
+      "typeVersion": 1.1,
+      "position": [
+        480,
+        0
+      ]
+    }
+  ],
+  "connections": {
+    "Démarrer": {
+      "main": [
+        [
+          {
+            "node": "Diagnostic LM Studio",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Diagnostic LM Studio": {
+      "main": [
+        [
+          {
+            "node": "Interroger le modèle local",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "pinData": {},
+  "tags": []
+}

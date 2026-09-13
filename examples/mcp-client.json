@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "lmstudio-local": {
+      "command": "/absolute/path/to/lmstudio-local-mcp/.venv/bin/python",
+      "args": [
+        "-m",
+        "lmstudio_mcp.server"
+      ]
+    }
+  }
+}

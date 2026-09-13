@@ -1,0 +1,36 @@
+[project]
+name = "lmstudio-local-mcp"
+version = "2.0.0"
+description = "LM Studio administration, inference, MCP connections, diagnostics and RAG"
+requires-python = ">=3.11"
+dependencies = [
+    "mcp>=1.20,<2",
+    "httpx>=0.28,<1",
+    "pydantic>=2.11,<3",
+    "python-dotenv>=1,<2",
+    "lmstudio>=1.5.0,<2",
+    "pypdf>=6.18.1,<7",
+    "python-docx>=1.2.0,<2",
+    "jsonschema>=4.20,<5",
+]
+
+[project.scripts]
+lmstudio-local-mcp = "lmstudio_mcp.server:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/lmstudio_mcp"]
+
+[dependency-groups]
+dev = ["pytest>=8,<10", "pytest-asyncio>=1,<2", "ruff>=0.11,<1"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 110
