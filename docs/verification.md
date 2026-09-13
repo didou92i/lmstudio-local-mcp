@@ -1,4 +1,4 @@
-# Vérification du 13 septembre 2026 — MCP 2.0
+# Vérification du 13 septembre 2026 — MCP 2.1
 
 ## Environnement
 
@@ -10,13 +10,17 @@
 
 ## Résultats confirmés
 
-- **65 tests automatiques réussis**, Ruff sans erreur. Réinstallation depuis `uv.lock` vérifiée hors ligne. Le premier contrôle des mises à jour est aussi testé sur une machine démarrée depuis moins d’une minute ; seuls les essais suivants après un échec sont temporisés.
+- **82 tests automatiques réussis**, Ruff sans erreur. Réinstallation depuis `uv.lock` vérifiée hors ligne. Le premier contrôle des mises à jour est aussi testé sur une machine démarrée depuis moins d’une minute ; seuls les essais suivants après un échec sont temporisés.
 - MCP stdio : initialisation, découverte des **28 outils**, appels réels avec le client officiel.
 - MCP HTTP Streamable : découverte des 28 outils et appels répétés réussis. Arrêt/redémarrage réel du serveur LM Studio vérifié, API de nouveau accessible ; serveur laissé démarré et processus HTTP de test arrêté.
 - Chargement/déchargement : existence puis absence des instances vérifiées ; les instances créées par les tests ont été nettoyées.
 - Inférence native : calcul attendu ; conversation conservant un code via `response_id` ; reconnaissance d’un PNG rouge ; réponse compatible OpenAI.
 - Embeddings : deux vecteurs de **768 dimensions**.
-- Documentation : synchronisation Git officielle, recherche et lecture avec commit/lignes.
+- Documentation : **284 fichiers suivis par Git**, tous indexés et relus intégralement, empreintes vérifiées ; 178 Markdown/MDX publiés, 48 non publiés, 58 fichiers de support.
+- Douze procédures avec sources et limites ; correspondance par fichier vers les outils/tests ou une absence de prise en charge. Ajouts/modifications/suppressions détectés ; sources changées signalées comme `needs_review`.
+- Recherche français/anglais : sept demandes de contrôle retrouvent leur page attendue parmi les cinq premiers résultats, environ 0,07 à 0,14 seconde par recherche locale observée.
+- MCP documentaire réel : instructions à l'initialisation, catalogue, références par demande, guides, ressource d'orientation, modèle de ressource de page et prompt `lmstudio_workflow` vérifiés en stdio.
+- Tests isolés : fraîcheur, échec réseau et conservation hors ligne, temporisation entre sessions, TTL nul, synchronisation concurrente, cache corrompu, chemins arbitraires/liens symboliques refusés, brouillons étiquetés et pagination complète. Ressources et prompt testés en HTTP avec LM Studio indisponible.
 - Connexions : test local, sélection d’un profil, utilisation de son API, blocage effectif du CLI local pendant la sélection distante, retour au profil local.
 - Diagnostic : serveur, matériel, disque, configurations de modèles et détection d’un connecteur MCP dont le programme manque.
 - Administration : simulation des mises à jour stables des moteurs et consultation de LM Link.
@@ -24,6 +28,8 @@
 - SDK : schéma des réglages réellement installés, sauvegarde d’un profil, chargement et inspection croisée SDK/REST.
 - RAG réel : document fictif indexé avec Nomic, recherche par similarité, réponse de Gemma avec citation exacte, puis exclusion du document après sa modification.
 - Enregistrement Codex confirmé : `lmstudio-local`, activé en stdio, démarrage 45 s et appels 1 000 s maximum. Un redémarrage du client MCP peut être nécessaire pour recharger la liste des outils.
+
+Preuve de lecture documentaire complète : `.state/docs-smoke.json`.
 
 Preuves locales synthétiques : `.state/smoke-stdio.json` et `.state/operations-smoke.json`. `.state/validation.json` conserve l’empreinte application, moteurs, serveur, code et dépendances : sa modification invalide la validation précédente. Les preuves de transport HTTP et de redémarrage sont consignées séparément dans `.state/server-smoke.json`. Ces rapports restent locaux et ne sont pas publiés, car ils peuvent contenir des chemins de fichiers, des configurations et des extraits documentaires.
 
@@ -52,4 +58,4 @@ Preuves locales synthétiques : `.state/smoke-stdio.json` et `.state/operations-
 
 La copie locale vient de [lmstudio-ai/docs](https://github.com/lmstudio-ai/docs), dépôt qui alimente le site officiel. Les changements d’application sont vérifiés sur [le changelog](https://lmstudio.ai/changelog/lmstudio). La sortie JSON RAG suit [la documentation des sorties structurées](https://lmstudio.ai/docs/developer/openai-compat/structured-output). Les erreurs de réseau rendent la vérification inconnue, jamais « à jour ».
 
-`lm_docs(action="sync")` actualise les références ; `lm_status(refresh_updates=true)` force le contrôle officiel ; les tests réels sont dans `scripts/`. Les mises à jour de l’application passent par l’interface officielle. `lm_runtime(action="update")` ne concerne que les moteurs stables.
+La documentation est synchronisée automatiquement selon son TTL ; `lm_docs(action="sync")` force cette actualisation. Voir [le périmètre documentaire](documentation.md). `lm_status(refresh_updates=true)` force le contrôle officiel ; les tests réels sont dans `scripts/`. Les mises à jour de l’application passent par l’interface officielle. `lm_runtime(action="update")` ne concerne que les moteurs stables.

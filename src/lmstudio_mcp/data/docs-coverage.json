@@ -1,0 +1,2225 @@
+{
+  "commit": "9b8bc2004f04880a0ca7cbb19932ea8eb390c2d5",
+  "assessed_at": "2026-09-13",
+  "scope": "Explicit connector coverage mapping; tests validate the stated subset, not every example or parameter.",
+  "files": {
+    ".github/workflows/cla.yml": {
+      "sha256": "9a417f44c9704d6b4f00c159ebcc824d5087ce49b7f2c503661df349b839bada",
+      "status": "repository_support",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier de support consultable comme texte ; aucun script ni workflow n’est exécuté."
+    },
+    ".gitignore": {
+      "sha256": "cf237c7aff44efbe6e502e645c3e06da03a69d7bdeb43392108ef3348143417e",
+      "status": "repository_support",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier de support consultable comme texte ; aucun script ni workflow n’est exécuté."
+    },
+    "0_app/0_root/index.mdx": {
+      "sha256": "378cb4b81823bd3818c7741dc39ee975d87c8e828adf0386443154a0fa79372f",
+      "status": "reference_only",
+      "tools": [],
+      "tests": [],
+      "limitation": "Référence consultable ; aucune couverture fonctionnelle complète ni validation spécifique de cette page revendiquée."
+    },
+    "0_app/0_root/meta.json": {
+      "sha256": "d392c2a2a06235b6921231648b3a213cc37ca7173d460d12d395a04a86ee5799",
+      "status": "repository_support",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier de support consultable comme texte ; aucun script ni workflow n’est exécuté."
+    },
+    "0_app/0_root/offline.mdx": {
+      "sha256": "e2ef33dfe6ee788eb77526c8b80cc44d82ef968835333ed16e17878c23af170e",
+      "status": "reference_only",
+      "tools": [],
+      "tests": [],
+      "limitation": "Référence consultable ; aucune couverture fonctionnelle complète ni validation spécifique de cette page revendiquée."
+    },
+    "0_app/0_root/system-requirements.md": {
+      "sha256": "b476f42ca82a6cac02b14890de7df895d4207ac3da7d65297641dacfe818ae3f",
+      "status": "partial",
+      "tools": [
+        "lm_diagnose"
+      ],
+      "tests": [
+        "tests/test_operations.py::test_diagnostics_returns_signals_without_raw_logs"
+      ],
+      "limitation": "Diagnostic matériel et signaux de logs expurgés ; pas de diffusion des prompts/logs bruts ni garantie de cause racine."
+    },
+    "0_app/1_basics/_connect-apps.mdx": {
+      "sha256": "29f4ec04079190d47a96cb36543a9454c3ff389a82ffd7d10858f3c9df33ce36",
+      "status": "unpublished",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier exclu de la publication officielle ; référence explicite uniquement, contrat non garanti."
+    },
+    "0_app/1_basics/_keychords.md": {
+      "sha256": "8c08d51b8092dfb330f9a561817f2c8aa4a1ce2b6bb578568353a2c484285eb4",
+      "status": "unpublished",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier exclu de la publication officielle ; référence explicite uniquement, contrat non garanti."
+    },
+    "0_app/1_basics/_troubleshooting.md": {
+      "sha256": "375e3e0f2ff314dda7ebb7b3f68bc2ea758104741e03972d4f6e87fe95e9395b",
+      "status": "unpublished",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier exclu de la publication officielle ; référence explicite uniquement, contrat non garanti."
+    },
+    "0_app/1_basics/chat.md": {
+      "sha256": "31c4a96a5d9582d983dcb85bda9dc8c9c9a4b8fc399527659c831c15fdd66689",
+      "status": "reference_only",
+      "tools": [],
+      "tests": [],
+      "limitation": "Référence consultable ; aucune couverture fonctionnelle complète ni validation spécifique de cette page revendiquée."
+    },
+    "0_app/1_basics/download-model.md": {
+      "sha256": "25703ffd9971ef3bf2051ea4a077d6eda3df79904ce4586b03575e87eaf89a83",
+      "status": "partial",
+      "tools": [
+        "lm_download",
+        "lm_download_status"
+      ],
+      "tests": [
+        "tests/test_connector.py::test_download_status_endpoint"
+      ],
+      "limitation": "Contrat simulé ; pas de téléchargement massif dans les tests réels, ni de pilotage du catalogue graphique."
+    },
+    "0_app/1_basics/index.mdx": {
+      "sha256": "ad19ec5c9eee9d6e67d4b9f2b6fd3757578925150f613f098e82e8dc55724d4a",
+      "status": "reference_only",
+      "tools": [],
+      "tests": [],
+      "limitation": "Référence consultable ; aucune couverture fonctionnelle complète ni validation spécifique de cette page revendiquée."
+    },
+    "0_app/1_basics/lmstudio-vs-llmster-vs-lms.md": {
+      "sha256": "1734c2957a18e4382fc1a2723edc2da528d1f1f4db122ca9827120570b24fe67",
+      "status": "reference_only",
+      "tools": [],
+      "tests": [],
+      "limitation": "Référence consultable ; aucune couverture fonctionnelle complète ni validation spécifique de cette page revendiquée."
+    },
+    "0_app/1_basics/meta.json": {
+      "sha256": "5aacece3abd21f6e4aa6b53786d2338d0a0186b55c3b7c7738cc1aab14df31b6",
+      "status": "repository_support",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier de support consultable comme texte ; aucun script ni workflow n’est exécuté."
+    },
+    "0_app/1_basics/rag.md": {
+      "sha256": "b916e5b6453561c4ae5c8c9b32d0bd998b05e19bf776e1628d5d19fa05b7a84e",
+      "status": "not_exposed",
+      "tools": [],
+      "tests": [],
+      "limitation": "Pièces jointes/RAG natif non pilotés ; les outils lm_rag_* utilisent leur propre index, pas celui décrit ici."
+    },
+    "0_app/2_mcp/deeplink.mdx": {
+      "sha256": "caf6dd50d7fd5f3ad93b778f3ed0f8bd59f3821969e3a7d2258c19906d64c9ce",
+      "status": "reference_only",
+      "tools": [],
+      "tests": [],
+      "limitation": "Référence consultable ; aucune couverture fonctionnelle complète ni validation spécifique de cette page revendiquée."
+    },
+    "0_app/2_mcp/index.mdx": {
+      "sha256": "a37ec7adaed232fa4917aad4e28f7a6d8bd6e65d9548c2c142f1228cc0d0eb38",
+      "status": "partial",
+      "tools": [
+        "lm_mcp_config",
+        "lm_mcp_probe",
+        "lm_mcp_call",
+        "lm_chat"
+      ],
+      "tests": [
+        "tests/test_operations.py::test_mcp_config_preserves_entries_backups_and_binds_permissions",
+        "tests/test_operations.py::test_real_child_mcp_handshake_authorization_schema_and_error",
+        "tests/test_connector.py::test_integrations_require_explicit_allowlist"
+      ],
+      "limitation": "Configuration, découverte, appel direct autorisé ; intégrations natives par plugin. Pas de MCP éphémère ni de réglage des commutateurs serveur."
+    },
+    "0_app/2_mcp/meta.json": {
+      "sha256": "c6cc1d592c6032e736392fe15f1eb39bf65381eab64e2f28c0b63228352e189f",
+      "status": "repository_support",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier de support consultable comme texte ; aucun script ni workflow n’est exécuté."
+    },
+    "0_app/3_modelyaml/index.md": {
+      "sha256": "6d47c4d74a6dea55b87c4e332f3dcd1525b3be06b2464a87bde1a34f3a8661bc",
+      "status": "not_exposed",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fonction documentée mais sans outil de pilotage dédié dans ce connecteur."
+    },
+    "0_app/3_modelyaml/meta.json": {
+      "sha256": "4355c4da1499f06d4828ceafa82afac291866ff2440d02cfa782d216260b2b65",
+      "status": "repository_support",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier de support consultable comme texte ; aucun script ni workflow n’est exécuté."
+    },
+    "0_app/3_modelyaml/publish.md": {
+      "sha256": "ac6bb3121f766dd6c8ab1a9c2bf87d2aadaf244dc7b547019f6985f5abdca339",
+      "status": "not_exposed",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fonction documentée mais sans outil de pilotage dédié dans ce connecteur."
+    },
+    "0_app/3_presets/import.md": {
+      "sha256": "057c5e23e6c50466b04a6f084b2a477a810b430d2d48a9b352f6bf55dcb59462",
+      "status": "not_exposed",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fonction documentée mais sans outil de pilotage dédié dans ce connecteur."
+    },
+    "0_app/3_presets/index.md": {
+      "sha256": "cf2060cde0afb14efeb72dc44e7dac9aa1adfc09fa8f57c125a3ea9b9f1005f0",
+      "status": "not_exposed",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fonction documentée mais sans outil de pilotage dédié dans ce connecteur."
+    },
+    "0_app/3_presets/meta.json": {
+      "sha256": "d3b467354cc9ad1daf3f2ab22d0d819195d875e829ccb90a3e87fa47e9245acc",
+      "status": "repository_support",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier de support consultable comme texte ; aucun script ni workflow n’est exécuté."
+    },
+    "0_app/3_presets/publish.md": {
+      "sha256": "e80f55f03391146397965651f64127de9937cfac73017fb3bf69ef12df4f2623",
+      "status": "not_exposed",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fonction documentée mais sans outil de pilotage dédié dans ce connecteur."
+    },
+    "0_app/3_presets/pull.md": {
+      "sha256": "5819e5705d89492fadc558ffaf5d1b3351ef89d4adebcbe23ae11fd83c730d73",
+      "status": "not_exposed",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fonction documentée mais sans outil de pilotage dédié dans ce connecteur."
+    },
+    "0_app/3_presets/push.mdx": {
+      "sha256": "62c7b6b11a8bd801eb9b78aa6e039a66b532dedd6342d84b35faf0886a00d4a8",
+      "status": "not_exposed",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fonction documentée mais sans outil de pilotage dédié dans ce connecteur."
+    },
+    "0_app/5_advanced/_branching.md": {
+      "sha256": "e9282df7252940853dea6669d5939982ae7e35501d784bea92a036ef6b59b189",
+      "status": "unpublished",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier exclu de la publication officielle ; référence explicite uniquement, contrat non garanti."
+    },
+    "0_app/5_advanced/_context.md": {
+      "sha256": "4afd78d92b699c57c81a767d90353eba7868363692126cbaf8cd1b23034bf509",
+      "status": "unpublished",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier exclu de la publication officielle ; référence explicite uniquement, contrat non garanti."
+    },
+    "0_app/5_advanced/_errors.md": {
+      "sha256": "2cc58cd16fe250cd4e6c49105b1ee443df99c9e2c19fd84af97ac71a89161386",
+      "status": "unpublished",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier exclu de la publication officielle ; référence explicite uniquement, contrat non garanti."
+    },
+    "0_app/5_advanced/_vision.md": {
+      "sha256": "15c3dc5e4a6513f6514c86f8592a1b15a410cfc6b71f669e5a3faba7a1e74e83",
+      "status": "unpublished",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier exclu de la publication officielle ; référence explicite uniquement, contrat non garanti."
+    },
+    "0_app/5_advanced/import-model.md": {
+      "sha256": "f1d0e247391a8b275fe6504a6e0001088b96c374564cceaa46b63380945e15f4",
+      "status": "partial",
+      "tools": [
+        "lm_import_model"
+      ],
+      "tests": [
+        "scripts/operations_smoke.py"
+      ],
+      "limitation": "Prévisualisation/import GGUF par copie ; import massif non exercé."
+    },
+    "0_app/5_advanced/meta.json": {
+      "sha256": "7f3ed1f6a40206d07e566aeec8e0baf60d19edd339ccf47cdf9fe408433aa908",
+      "status": "repository_support",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier de support consultable comme texte ; aucun script ni workflow n’est exécuté."
+    },
+    "0_app/5_advanced/parallel-requests.md": {
+      "sha256": "28073bbf536c379ba6cf0266c46767b1d18f661b3baa7c0938b77bf5c3f90806",
+      "status": "partial",
+      "tools": [
+        "lm_load_advanced",
+        "lm_estimate"
+      ],
+      "tests": [
+        "tests/test_connector.py::test_cli_rejects_unsupported_flags_before_loading"
+      ],
+      "limitation": "Flags disponibles vérifiés ; résultats spéculatifs et performances non validés pour tous les matériels."
+    },
+    "0_app/5_advanced/per-model.mdx": {
+      "sha256": "27abd2042744f8e8e8141bfc94346b5644065d379244895bfc697ebb88c14d4e",
+      "status": "reference_only",
+      "tools": [],
+      "tests": [],
+      "limitation": "Référence consultable ; aucune couverture fonctionnelle complète ni validation spécifique de cette page revendiquée."
+    },
+    "0_app/5_advanced/prompt-template.md": {
+      "sha256": "153119512a890876db00859721a5c219cf0afa1e197548b6cd99409efaf0e8a8",
+      "status": "reference_only",
+      "tools": [],
+      "tests": [],
+      "limitation": "Référence consultable ; aucune couverture fonctionnelle complète ni validation spécifique de cette page revendiquée."
+    },
+    "0_app/5_advanced/speculative-decoding.md": {
+      "sha256": "5fce353b95cc4410d973ce4fdbc95ef50f4fcd43279f1df23d72e6e4a1dd6733",
+      "status": "partial",
+      "tools": [
+        "lm_load_advanced",
+        "lm_estimate"
+      ],
+      "tests": [
+        "tests/test_connector.py::test_cli_rejects_unsupported_flags_before_loading"
+      ],
+      "limitation": "Flags disponibles vérifiés ; résultats spéculatifs et performances non validés pour tous les matériels."
+    },
+    "0_app/6_user-interface/languages.mdx": {
+      "sha256": "bc99b1146fa2eba0b51d29763897a1fc3aec7fa5ead127f55136064f8584ff37",
+      "status": "not_exposed",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fonction documentée mais sans outil de pilotage dédié dans ce connecteur."
+    },
+    "0_app/6_user-interface/meta.json": {
+      "sha256": "64f8ca65a0f8b4ef594053474a1acd0f9185fe1f3dab52a6dece3841d90bd7e7",
+      "status": "repository_support",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier de support consultable comme texte ; aucun script ni workflow n’est exécuté."
+    },
+    "0_app/6_user-interface/modes.md": {
+      "sha256": "ee118d025553b677531e0562f1b524c807953961e70f288e51e63cb59af931f8",
+      "status": "not_exposed",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fonction documentée mais sans outil de pilotage dédié dans ce connecteur."
+    },
+    "0_app/6_user-interface/themes.md": {
+      "sha256": "b709f0a20b584894b378f0546cca6de8b89fb90cba48133fc76775cf2fdb1da9",
+      "status": "not_exposed",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fonction documentée mais sans outil de pilotage dédié dans ce connecteur."
+    },
+    "0_app/meta.json": {
+      "sha256": "620d2f6df6399f29cee4ad42cd53b19715d34392b4cdfdf68f564bc83e44eb95",
+      "status": "repository_support",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier de support consultable comme texte ; aucun script ni workflow n’est exécuté."
+    },
+    "0_bionic/0_root/index.mdx": {
+      "sha256": "6d1471c6d9880baac5654f93bc11451539c5b1f38d9a949856ee8290ab90d2b2",
+      "status": "not_exposed",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fonction documentée mais sans outil de pilotage dédié dans ce connecteur."
+    },
+    "0_bionic/0_root/meta.json": {
+      "sha256": "dfae2d247a44279e7c3ba26e7bd0e3d0feceea6e3af131d6b2fa75fcdcc16c02",
+      "status": "repository_support",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier de support consultable comme texte ; aucun script ni workflow n’est exécuté."
+    },
+    "0_bionic/0_root/projects-and-sessions.md": {
+      "sha256": "4e7cda65151ec22977c6670017d142d48b138e13e959b936de4fe00120abe1f9",
+      "status": "not_exposed",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fonction documentée mais sans outil de pilotage dédié dans ce connecteur."
+    },
+    "0_bionic/0_root/quick-start.md": {
+      "sha256": "10a140e91a8da93fe5d0402d97eccaf7b5df3171b85173afc31589f68454d527",
+      "status": "not_exposed",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fonction documentée mais sans outil de pilotage dédié dans ce connecteur."
+    },
+    "0_bionic/1_accounts-plans-and-billing/credits-and-usage.md": {
+      "sha256": "4251add6baa992d0941dccc6dfa207ceee53832863540086178082153f780c85",
+      "status": "not_exposed",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fonction documentée mais sans outil de pilotage dédié dans ce connecteur."
+    },
+    "0_bionic/1_accounts-plans-and-billing/index.mdx": {
+      "sha256": "9f9be4ebc8fe46ddee63967f748153c7a47d79895a4c28334b74d38d42fbe803",
+      "status": "not_exposed",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fonction documentée mais sans outil de pilotage dédié dans ce connecteur."
+    },
+    "0_bionic/1_accounts-plans-and-billing/meta.json": {
+      "sha256": "990629205bc0e7771e89d4fca798d0bda970693698161cc8192bff72a11f4f6d",
+      "status": "repository_support",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier de support consultable comme texte ; aucun script ni workflow n’est exécuté."
+    },
+    "0_bionic/2_agent/code-project.mdx": {
+      "sha256": "dd6a7b0d9d4ce485f68e7d1b53e8a0af4c621c8b4a53c82dcb4a84941f3d146b",
+      "status": "not_exposed",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fonction documentée mais sans outil de pilotage dédié dans ce connecteur."
+    },
+    "0_bionic/2_agent/meta.json": {
+      "sha256": "3ef36825c4751ae3e2f8d4dc59b9a050dc5976b7fa045ea715b3feceb1f3338d",
+      "status": "repository_support",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier de support consultable comme texte ; aucun script ni workflow n’est exécuté."
+    },
+    "0_bionic/2_agent/skills.mdx": {
+      "sha256": "7aa712c37167a7aa06007d19654d99cb41ccfd51118cc33c92c2a3b327e72a1d",
+      "status": "not_exposed",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fonction documentée mais sans outil de pilotage dédié dans ce connecteur."
+    },
+    "0_bionic/2_agent/work-project.mdx": {
+      "sha256": "3c9e1f689bd6e9ed1b94c74cc2d1d97463bc7d4f71b8a7a223f5542a139131f7",
+      "status": "not_exposed",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fonction documentée mais sans outil de pilotage dédié dans ce connecteur."
+    },
+    "0_bionic/2_projects/code-project.mdx": {
+      "sha256": "316049fcc7b084867378173747ebb7682096a3f8457fddb2ebf178f19a665319",
+      "status": "not_exposed",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fonction documentée mais sans outil de pilotage dédié dans ce connecteur."
+    },
+    "0_bionic/2_projects/meta.json": {
+      "sha256": "3a65164ba7a0495e354e601eb62be5618a907fd5776516505c95572bdc801b66",
+      "status": "repository_support",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier de support consultable comme texte ; aucun script ni workflow n’est exécuté."
+    },
+    "0_bionic/2_projects/projects-and-sessions.md": {
+      "sha256": "f7f43a1f38bab0999c76371005b292d207a699470e1735849b5dfb56a935d427",
+      "status": "not_exposed",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fonction documentée mais sans outil de pilotage dédié dans ce connecteur."
+    },
+    "0_bionic/2_projects/work-project.mdx": {
+      "sha256": "32f2c45a2d3828a1f18c5e5d41d4a0e911589b796025cd8434ba9d26b4e69b2c",
+      "status": "not_exposed",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fonction documentée mais sans outil de pilotage dédié dans ce connecteur."
+    },
+    "0_bionic/4_models/download-local-models.mdx": {
+      "sha256": "a201dffca3dfa6d6808d3afcd86517e5193bc79495dd1fcda9d4316152290032",
+      "status": "not_exposed",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fonction documentée mais sans outil de pilotage dédié dans ce connecteur."
+    },
+    "0_bionic/4_models/index.mdx": {
+      "sha256": "80724a979db0940b3797d0de45c70e517f2d33a5228b2be8a6fc06034636520d",
+      "status": "not_exposed",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fonction documentée mais sans outil de pilotage dédié dans ce connecteur."
+    },
+    "0_bionic/4_models/meta.json": {
+      "sha256": "bd3a54a3327deb5d3dde13596a872494aa5089ba0721378b62b39011c47d0d5d",
+      "status": "repository_support",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier de support consultable comme texte ; aucun script ni workflow n’est exécuté."
+    },
+    "0_bionic/5_voice-input/index.md": {
+      "sha256": "05aafcea6d17a8bf33e4b2e901ee3c7cf1765194e0257345a1f51dffa79eb174",
+      "status": "not_exposed",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fonction documentée mais sans outil de pilotage dédié dans ce connecteur."
+    },
+    "0_bionic/5_voice-input/meta.json": {
+      "sha256": "7342b9fd7df6ef026daf1735798e04bdf73032a214ff6a99894851a9ef9f17f8",
+      "status": "repository_support",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier de support consultable comme texte ; aucun script ni workflow n’est exécuté."
+    },
+    "0_bionic/meta.json": {
+      "sha256": "0e69e5b308d08b1ed7baec71907edd4629c7b487be54a6d0ff66ee506c829c8b",
+      "status": "repository_support",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier de support consultable comme texte ; aucun script ni workflow n’est exécuté."
+    },
+    "1_developer/0_core/0_server/index.md": {
+      "sha256": "b5c86cb5e7417c8b143e187bd34a5ba0673a0d14076a47dcb059b88d8f69c74b",
+      "status": "partial",
+      "tools": [
+        "lm_server_control",
+        "lm_status"
+      ],
+      "tests": [
+        "scripts/server_smoke.py"
+      ],
+      "limitation": "Démarrage/arrêt/statut sur loopback ; commutateurs GUI, CORS et exposition LAN non modifiés."
+    },
+    "1_developer/0_core/0_server/meta.json": {
+      "sha256": "e69b46387a8442a07ef852993d1b2322ef0abe72764cdc3c6d15be7d5218b6b0",
+      "status": "repository_support",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier de support consultable comme texte ; aucun script ni workflow n’est exécuté."
+    },
+    "1_developer/0_core/0_server/serve-on-network.mdx": {
+      "sha256": "e8bd859763163f927913bf7bcb88323213ae2ad1b6b2908a88939b80624ed018",
+      "status": "partial",
+      "tools": [
+        "lm_connections",
+        "lm_status"
+      ],
+      "tests": [
+        "tests/test_operations.py::test_connection_profiles_keep_secrets_out_and_guard_selection",
+        "tests/test_operations.py::test_remote_selection_disables_local_cli_and_missing_token_is_recoverable"
+      ],
+      "limitation": "Profils REST et références aux secrets ; création des jetons/permissions GUI non exposée. SDK 1.5.0 api_token incompatible observé."
+    },
+    "1_developer/0_core/0_server/settings.md": {
+      "sha256": "d89454b84c6eb83385dfe3495995c58a27e82460b5cd86dab62166bc9ed2f893",
+      "status": "partial",
+      "tools": [
+        "lm_server_control",
+        "lm_status"
+      ],
+      "tests": [
+        "scripts/server_smoke.py"
+      ],
+      "limitation": "Démarrage/arrêt/statut sur loopback ; commutateurs GUI, CORS et exposition LAN non modifiés."
+    },
+    "1_developer/0_core/authentication.mdx": {
+      "sha256": "0ed17029d6b5d14b540833875e6a0ec7329d1fba3eb94b638b9fdd5d6a5736c2",
+      "status": "partial",
+      "tools": [
+        "lm_connections",
+        "lm_status"
+      ],
+      "tests": [
+        "tests/test_operations.py::test_connection_profiles_keep_secrets_out_and_guard_selection",
+        "tests/test_operations.py::test_remote_selection_disables_local_cli_and_missing_token_is_recoverable"
+      ],
+      "limitation": "Profils REST et références aux secrets ; création des jetons/permissions GUI non exposée. SDK 1.5.0 api_token incompatible observé."
+    },
+    "1_developer/0_core/headless.md": {
+      "sha256": "914d760bac6eecf3b459c4bb6792e06edf3b63896a2bb1b4b702f36db5924ec7",
+      "status": "reference_only",
+      "tools": [],
+      "tests": [],
+      "limitation": "Référence consultable ; aucune couverture fonctionnelle complète ni validation spécifique de cette page revendiquée."
+    },
+    "1_developer/0_core/headless_llmster.mdx": {
+      "sha256": "bdbbae2aaec087ddfd1ffb3b5622c07d53181af40a9ade71f6b89debff0b0ff6",
+      "status": "reference_only",
+      "tools": [],
+      "tests": [],
+      "limitation": "Référence consultable ; aucune couverture fonctionnelle complète ni validation spécifique de cette page revendiquée."
+    },
+    "1_developer/0_core/lmlink.md": {
+      "sha256": "49f02bd7a1efcf925b8deb48ef0e6b525afb22686684dd6f8f0f0945b4fd6ce2",
+      "status": "reference_only",
+      "tools": [],
+      "tests": [],
+      "limitation": "Référence consultable ; aucune couverture fonctionnelle complète ni validation spécifique de cette page revendiquée."
+    },
+    "1_developer/0_core/mcp.mdx": {
+      "sha256": "fb7a1860db28dc3957e4ab6b3c3417abbf7b2d762bdec411dfe8b169559e1122",
+      "status": "partial",
+      "tools": [
+        "lm_mcp_config",
+        "lm_mcp_probe",
+        "lm_mcp_call",
+        "lm_chat"
+      ],
+      "tests": [
+        "tests/test_operations.py::test_mcp_config_preserves_entries_backups_and_binds_permissions",
+        "tests/test_operations.py::test_real_child_mcp_handshake_authorization_schema_and_error",
+        "tests/test_connector.py::test_integrations_require_explicit_allowlist"
+      ],
+      "limitation": "Configuration, découverte, appel direct autorisé ; intégrations natives par plugin. Pas de MCP éphémère ni de réglage des commutateurs serveur."
+    },
+    "1_developer/0_core/meta.json": {
+      "sha256": "c7da9bb26278043d8d61fb19c7d550e46e6a81584ef0bbb9a5cfa191bcf7e9bd",
+      "status": "repository_support",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier de support consultable comme texte ; aucun script ni workflow n’est exécuté."
+    },
+    "1_developer/0_core/ttl-and-auto-evict.md": {
+      "sha256": "b45afcbc5137ce54416f93c461f84922fe418f108eb7a71bce2feb83994777e0",
+      "status": "reference_only",
+      "tools": [],
+      "tests": [],
+      "limitation": "Référence consultable ; aucune couverture fonctionnelle complète ni validation spécifique de cette page revendiquée."
+    },
+    "1_developer/2_rest/chat.md": {
+      "sha256": "2fdaa604b537a7f5918d3cdf178ead1f1e962b60d4954df251e0be54b60ae096",
+      "status": "partial",
+      "tools": [
+        "lm_chat"
+      ],
+      "tests": [
+        "tests/test_connector.py::test_chat_parameters_and_continuation_really_transmitted",
+        "tests/test_connector.py::test_unsupported_reasoning_blocked"
+      ],
+      "limitation": "Chat non streamé ; images et état natif ; sous-ensemble validé des paramètres et intégrations."
+    },
+    "1_developer/2_rest/download-status.md": {
+      "sha256": "f6098deaf4a507e4c1185f4b8b8eeee7777064457076026d4ff4a99fd4ce53e8",
+      "status": "partial",
+      "tools": [
+        "lm_download",
+        "lm_download_status"
+      ],
+      "tests": [
+        "tests/test_connector.py::test_download_status_endpoint"
+      ],
+      "limitation": "Contrat simulé ; pas de téléchargement massif dans les tests réels, ni de pilotage du catalogue graphique."
+    },
+    "1_developer/2_rest/download.md": {
+      "sha256": "3269916369d6aee2cc1f426501e3c9445272fa9ffd65da325587a02040887c3c",
+      "status": "partial",
+      "tools": [
+        "lm_download",
+        "lm_download_status"
+      ],
+      "tests": [
+        "tests/test_connector.py::test_download_status_endpoint"
+      ],
+      "limitation": "Contrat simulé ; pas de téléchargement massif dans les tests réels, ni de pilotage du catalogue graphique."
+    },
+    "1_developer/2_rest/endpoints.mdx": {
+      "sha256": "2ea508caca15d66411b4268dbc0f72ea9a6acb431c1e7464f6d7df45836d2c7c",
+      "status": "reference_only",
+      "tools": [],
+      "tests": [],
+      "limitation": "Référence consultable ; aucune couverture fonctionnelle complète ni validation spécifique de cette page revendiquée."
+    },
+    "1_developer/2_rest/index.mdx": {
+      "sha256": "893f97cb7faf96dd9a298f9b7b0ef3fe0df8f28933622a64312405bcdfd51082",
+      "status": "reference_only",
+      "tools": [],
+      "tests": [],
+      "limitation": "Référence consultable ; aucune couverture fonctionnelle complète ni validation spécifique de cette page revendiquée."
+    },
+    "1_developer/2_rest/list.md": {
+      "sha256": "2430dc7c95dc2674636a981fd6f9e9b47ffb245c9b3922e1712cc7826e7ca9e1",
+      "status": "partial",
+      "tools": [
+        "lm_models"
+      ],
+      "tests": [
+        "tests/test_connector.py::test_per_call_preflight_and_cached_upstream"
+      ],
+      "limitation": "Liste et capacités via REST ; les exemples CLI/SDK ne sont pas tous reproduits."
+    },
+    "1_developer/2_rest/load.md": {
+      "sha256": "4420e2a07e79cd18bd72246510693e2759e6a7c81a2b7ecd11ec5863dac15407",
+      "status": "partial",
+      "tools": [
+        "lm_load"
+      ],
+      "tests": [
+        "tests/test_connector.py::test_native_load_and_unload_verified",
+        "tests/test_connector.py::test_ignored_load_config_is_visible"
+      ],
+      "limitation": "Champs REST explicitement validés ; les paramètres effectifs restent contrôlés selon le moteur."
+    },
+    "1_developer/2_rest/meta.json": {
+      "sha256": "696fc4d530b50453be4e5505fbc1562865625214797c355827c5bf7abf6eb68d",
+      "status": "repository_support",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier de support consultable comme texte ; aucun script ni workflow n’est exécuté."
+    },
+    "1_developer/2_rest/quickstart.md": {
+      "sha256": "26d5c5bf3d08214949a5c4497434051f035e5562162bc617f30942dac62b1252",
+      "status": "reference_only",
+      "tools": [],
+      "tests": [],
+      "limitation": "Référence consultable ; aucune couverture fonctionnelle complète ni validation spécifique de cette page revendiquée."
+    },
+    "1_developer/2_rest/stateful-chats.mdx": {
+      "sha256": "6becedf4541c84215783c905bd779f647657135b28e160d8030a6e45d6fdd5b8",
+      "status": "partial",
+      "tools": [
+        "lm_chat"
+      ],
+      "tests": [
+        "tests/test_connector.py::test_chat_parameters_and_continuation_really_transmitted",
+        "tests/test_connector.py::test_unsupported_reasoning_blocked"
+      ],
+      "limitation": "Chat non streamé ; images et état natif ; sous-ensemble validé des paramètres et intégrations."
+    },
+    "1_developer/2_rest/streaming-events.md": {
+      "sha256": "37a1f036d9eee1f1077055d7cbfedc3371a154169a632f63a76c254ae1e68aa0",
+      "status": "not_exposed",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fonction documentée mais sans outil de pilotage dédié dans ce connecteur."
+    },
+    "1_developer/2_rest/unload.md": {
+      "sha256": "d263359db4d73f1eb9071fa57153053138a5cad24425a0fb317518c684ff73a5",
+      "status": "partial",
+      "tools": [
+        "lm_unload"
+      ],
+      "tests": [
+        "tests/test_connector.py::test_http_success_does_not_prove_unload"
+      ],
+      "limitation": "Déchargement d’une instance précise et contrôle de son absence."
+    },
+    "1_developer/3_openai-compat/chat-completions.md": {
+      "sha256": "722e0a2a2cea3f7ca629ce4e038358eec262a4e6e643c4c169bb0998550a0157",
+      "status": "partial",
+      "tools": [
+        "lm_openai_chat"
+      ],
+      "tests": [
+        "scripts/smoke_test.py",
+        "tests/test_operations.py::test_rag_refuses_unverifiable_answers"
+      ],
+      "limitation": "Sorties structurées et définitions de fonctions ; appels retournés sans exécution automatique, sans streaming."
+    },
+    "1_developer/3_openai-compat/completions.mdx": {
+      "sha256": "1542962b9f835ca192a3e9dded94771867dc31f63dbb53341708726c6bcc1a12",
+      "status": "not_exposed",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fonction documentée mais sans outil de pilotage dédié dans ce connecteur."
+    },
+    "1_developer/3_openai-compat/embeddings.md": {
+      "sha256": "03ab96073b57ff0a3b51e00bc2010401300dda83471d5f8d01458fa85717b918",
+      "status": "partial",
+      "tools": [
+        "lm_embeddings"
+      ],
+      "tests": [
+        "tests/test_connector.py::test_chat_model_cannot_be_used_for_embeddings",
+        "scripts/smoke_test.py"
+      ],
+      "limitation": "Embeddings via API compatible OpenAI ; tous les exemples SDK ne sont pas implémentés."
+    },
+    "1_developer/3_openai-compat/index.mdx": {
+      "sha256": "78d51742e218b7db696101e1adaded800280e046e868d640a805b99f6e3d806d",
+      "status": "reference_only",
+      "tools": [],
+      "tests": [],
+      "limitation": "Référence consultable ; aucune couverture fonctionnelle complète ni validation spécifique de cette page revendiquée."
+    },
+    "1_developer/3_openai-compat/meta.json": {
+      "sha256": "f73e25ac4361682adee5f63e9c20548c2c756155a878f1a6b5eb77fddf866461",
+      "status": "repository_support",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier de support consultable comme texte ; aucun script ni workflow n’est exécuté."
+    },
+    "1_developer/3_openai-compat/models.md": {
+      "sha256": "e8e5ba170835d4f17820ec03b6314501b98ef6d0abd1cf65f066318fc4dc31b9",
+      "status": "reference_only",
+      "tools": [],
+      "tests": [],
+      "limitation": "Référence consultable ; aucune couverture fonctionnelle complète ni validation spécifique de cette page revendiquée."
+    },
+    "1_developer/3_openai-compat/responses.md": {
+      "sha256": "c27cc3ffa613c119dbf14bfc8d3e535ae41e0cef9f7a4b5c0dacfcbb267edeb3",
+      "status": "not_exposed",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fonction documentée mais sans outil de pilotage dédié dans ce connecteur."
+    },
+    "1_developer/3_openai-compat/structured-output.md": {
+      "sha256": "0e8ce5e9cef94249c5e8aa9f7982d85de524021dd6bd208cb0b99ba2b5db9b3b",
+      "status": "partial",
+      "tools": [
+        "lm_openai_chat"
+      ],
+      "tests": [
+        "scripts/smoke_test.py",
+        "tests/test_operations.py::test_rag_refuses_unverifiable_answers"
+      ],
+      "limitation": "Sorties structurées et définitions de fonctions ; appels retournés sans exécution automatique, sans streaming."
+    },
+    "1_developer/3_openai-compat/tools.mdx": {
+      "sha256": "bd43a03288c3e8f61695af895627e8aa30b7f5fcbe88e071fe6338055ff33af6",
+      "status": "partial",
+      "tools": [
+        "lm_openai_chat"
+      ],
+      "tests": [
+        "scripts/smoke_test.py",
+        "tests/test_operations.py::test_rag_refuses_unverifiable_answers"
+      ],
+      "limitation": "Sorties structurées et définitions de fonctions ; appels retournés sans exécution automatique, sans streaming."
+    },
+    "1_developer/4_anthropic-compat/index.mdx": {
+      "sha256": "3fb8b611600d1df6327e1c9df9c926406fc99cc73adc9508c72c3a99ebefff1c",
+      "status": "not_exposed",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fonction documentée mais sans outil de pilotage dédié dans ce connecteur."
+    },
+    "1_developer/4_anthropic-compat/messages.md": {
+      "sha256": "9ac335eee39bb14580e5a58d5e4c4468329f45bb9a033fbb84bebbfe17b2fe16",
+      "status": "not_exposed",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fonction documentée mais sans outil de pilotage dédié dans ce connecteur."
+    },
+    "1_developer/4_anthropic-compat/meta.json": {
+      "sha256": "8daad4e7379ec1b9cddf3e1de9e2bf99082000d30689ed067495e75bd3d40771",
+      "status": "repository_support",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier de support consultable comme texte ; aucun script ni workflow n’est exécuté."
+    },
+    "1_developer/_embeddings.md": {
+      "sha256": "d9b2799055a047b6de46e63fcac6ea438bc8d7dcc74b7e6f6beafacfd73ea791",
+      "status": "unpublished",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier exclu de la publication officielle ; référence explicite uniquement, contrat non garanti."
+    },
+    "1_developer/api-changelog.md": {
+      "sha256": "9e851df8523b41c4299fcaabe923213f7c027972c08edb03ac0dde71ac3ccc89",
+      "status": "reference_only",
+      "tools": [],
+      "tests": [],
+      "limitation": "Référence consultable ; aucune couverture fonctionnelle complète ni validation spécifique de cette page revendiquée."
+    },
+    "1_developer/index.mdx": {
+      "sha256": "35917905747112f2158b0883916b8d44a5ce4fb14214466977301f5452c07069",
+      "status": "reference_only",
+      "tools": [],
+      "tests": [],
+      "limitation": "Référence consultable ; aucune couverture fonctionnelle complète ni validation spécifique de cette page revendiquée."
+    },
+    "1_developer/meta.json": {
+      "sha256": "f455f355fc7628eb1fd97903136056f1ce1195813d6cc64b19dd81f718a943d7",
+      "status": "repository_support",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier de support consultable comme texte ; aucun script ni workflow n’est exécuté."
+    },
+    "1_python/1_getting-started/authentication.mdx": {
+      "sha256": "0f005a0f459d1ada189e2193d8347d80e736f0de1065d96ac9c2b82da85e0255",
+      "status": "partial",
+      "tools": [
+        "lm_connections",
+        "lm_status"
+      ],
+      "tests": [
+        "tests/test_operations.py::test_connection_profiles_keep_secrets_out_and_guard_selection",
+        "tests/test_operations.py::test_remote_selection_disables_local_cli_and_missing_token_is_recoverable"
+      ],
+      "limitation": "Profils REST et références aux secrets ; création des jetons/permissions GUI non exposée. SDK 1.5.0 api_token incompatible observé."
+    },
+    "1_python/1_getting-started/meta.json": {
+      "sha256": "60ee286069b55f8e594f80122255deab96c6ed73b1d1cf40a54f13d947522784",
+      "status": "repository_support",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier de support consultable comme texte ; aucun script ni workflow n’est exécuté."
+    },
+    "1_python/1_getting-started/project-setup.md": {
+      "sha256": "3626354ff0963f059f4bbd522ccf7ad48eecd9232c404d8c29b36ab3784c73cc",
+      "status": "reference_only",
+      "tools": [],
+      "tests": [],
+      "limitation": "Référence consultable ; aucune couverture fonctionnelle complète ni validation spécifique de cette page revendiquée."
+    },
+    "1_python/1_getting-started/repl.md": {
+      "sha256": "d1b4e28d1bde486ee26adf360938b25e64d357fc337b1bc51555ee58dea01e22",
+      "status": "reference_only",
+      "tools": [],
+      "tests": [],
+      "limitation": "Référence consultable ; aucune couverture fonctionnelle complète ni validation spécifique de cette page revendiquée."
+    },
+    "1_python/1_llm-prediction/_index.md": {
+      "sha256": "67039664f9cfc778a9c05346a22a44c04065b70a1c154d14de62a914d27004d8",
+      "status": "unpublished",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier exclu de la publication officielle ; référence explicite uniquement, contrat non garanti."
+    },
+    "1_python/1_llm-prediction/cancelling-predictions.md": {
+      "sha256": "6dc7c2af62475fbc910561984311402edde5b4071285ba8badfff517d9984299",
+      "status": "not_exposed",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fonction documentée mais sans outil de pilotage dédié dans ce connecteur."
+    },
+    "1_python/1_llm-prediction/chat-completion.md": {
+      "sha256": "9afcf00d8a234958ca7fc52aa2c30e1b04ff34d1c78c34ded11b1e63b76361da",
+      "status": "reference_only",
+      "tools": [],
+      "tests": [],
+      "limitation": "Référence consultable ; aucune couverture fonctionnelle complète ni validation spécifique de cette page revendiquée."
+    },
+    "1_python/1_llm-prediction/completion.mdx": {
+      "sha256": "7680980045263514606969eb7937631c6cdd03621412d6d4b26505eacb18ddf3",
+      "status": "reference_only",
+      "tools": [],
+      "tests": [],
+      "limitation": "Référence consultable ; aucune couverture fonctionnelle complète ni validation spécifique de cette page revendiquée."
+    },
+    "1_python/1_llm-prediction/image-input.mdx": {
+      "sha256": "66f77a4694ca2978e7fd5e11e6008521220a698aa3478ec6171fde8901f82404",
+      "status": "reference_only",
+      "tools": [],
+      "tests": [],
+      "limitation": "Référence consultable ; aucune couverture fonctionnelle complète ni validation spécifique de cette page revendiquée."
+    },
+    "1_python/1_llm-prediction/meta.json": {
+      "sha256": "8ff7313f99cf26f47734e78a568a928b0fe2df811787dbd878efb2fe016e3d95",
+      "status": "repository_support",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier de support consultable comme texte ; aucun script ni workflow n’est exécuté."
+    },
+    "1_python/1_llm-prediction/parameters.md": {
+      "sha256": "97511493d56b45e80b4c2d6541f11beea7efdd13130c5d9774cb57dad5c2f8aa",
+      "status": "reference_only",
+      "tools": [],
+      "tests": [],
+      "limitation": "Référence consultable ; aucune couverture fonctionnelle complète ni validation spécifique de cette page revendiquée."
+    },
+    "1_python/1_llm-prediction/speculative-decoding.md": {
+      "sha256": "457e919f42304e2891a4ecab59ac933f6bd945f1b126c8fdf7c0719174f830e7",
+      "status": "reference_only",
+      "tools": [],
+      "tests": [],
+      "limitation": "Référence consultable ; aucune couverture fonctionnelle complète ni validation spécifique de cette page revendiquée."
+    },
+    "1_python/1_llm-prediction/structured-response.md": {
+      "sha256": "2b7f8c1aa32d6b88a30d1efb764f3232c66b7619b2d31385c1b6b0435a1b62cd",
+      "status": "reference_only",
+      "tools": [],
+      "tests": [],
+      "limitation": "Référence consultable ; aucune couverture fonctionnelle complète ni validation spécifique de cette page revendiquée."
+    },
+    "1_python/1_llm-prediction/working-with-chats.md": {
+      "sha256": "b120faaa0ec20dae3da09f6e39b0f09ca06d843e4bf83ec026dfbacbc6d43b78",
+      "status": "reference_only",
+      "tools": [],
+      "tests": [],
+      "limitation": "Référence consultable ; aucune couverture fonctionnelle complète ni validation spécifique de cette page revendiquée."
+    },
+    "1_python/2_agent/_index.md": {
+      "sha256": "2f74d0f0334669a01f74fbbd813c1f7c1845a6fbd27ec83b46068b0d49196aef",
+      "status": "unpublished",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier exclu de la publication officielle ; référence explicite uniquement, contrat non garanti."
+    },
+    "1_python/2_agent/act.md": {
+      "sha256": "dfe235870cdc526a4d7f75317b9418b5c77d11b16583a78af1f03dfb1f360841",
+      "status": "not_exposed",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fonction documentée mais sans outil de pilotage dédié dans ce connecteur."
+    },
+    "1_python/2_agent/meta.json": {
+      "sha256": "08682fb4098e22ffdc0feb293a2eec3bc2f981097cd18a238ba7f610924ae9ba",
+      "status": "repository_support",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier de support consultable comme texte ; aucun script ni workflow n’est exécuté."
+    },
+    "1_python/2_agent/tools.md": {
+      "sha256": "634b39760f278f069a1ab8681f6e6624fe252fea867a357b2633c639059fc664",
+      "status": "not_exposed",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fonction documentée mais sans outil de pilotage dédié dans ce connecteur."
+    },
+    "1_python/3_embedding/index.md": {
+      "sha256": "a02deed0e544363328ce22b4c0f9bba0edc639338cfe8bd18297782b01dd1051",
+      "status": "partial",
+      "tools": [
+        "lm_embeddings"
+      ],
+      "tests": [
+        "tests/test_connector.py::test_chat_model_cannot_be_used_for_embeddings",
+        "scripts/smoke_test.py"
+      ],
+      "limitation": "Embeddings via API compatible OpenAI ; tous les exemples SDK ne sont pas implémentés."
+    },
+    "1_python/4_tokenization/index.md": {
+      "sha256": "a73c488f1c85cf8143cbe406479f60bccab0b605f4a034c1526f711aae1f26f6",
+      "status": "not_exposed",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fonction documentée mais sans outil de pilotage dédié dans ce connecteur."
+    },
+    "1_python/5_manage-models/_download-models.md": {
+      "sha256": "ed59b16accc17d6e59cc3a4afafe02022850e1383b75521f087f8770a3e455f6",
+      "status": "unpublished",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier exclu de la publication officielle ; référence explicite uniquement, contrat non garanti."
+    },
+    "1_python/5_manage-models/list-downloaded.md": {
+      "sha256": "7c6a999c5eef057c435a17df635d2f996df3ec3f39b51283b36e7e8b460fb0bf",
+      "status": "partial",
+      "tools": [
+        "lm_models"
+      ],
+      "tests": [
+        "tests/test_connector.py::test_per_call_preflight_and_cached_upstream"
+      ],
+      "limitation": "Liste et capacités via REST ; les exemples CLI/SDK ne sont pas tous reproduits."
+    },
+    "1_python/5_manage-models/list-loaded.md": {
+      "sha256": "c63486dc431a733c8d74c380bb1361c4b769bb97ce4c4edfd97fd5db3aef7fc2",
+      "status": "partial",
+      "tools": [
+        "lm_models"
+      ],
+      "tests": [
+        "tests/test_connector.py::test_per_call_preflight_and_cached_upstream"
+      ],
+      "limitation": "Liste et capacités via REST ; les exemples CLI/SDK ne sont pas tous reproduits."
+    },
+    "1_python/5_manage-models/loading.mdx": {
+      "sha256": "d29e4930700810bcf817664616671b6b74700c434b808951b68cb9e936051548",
+      "status": "partial",
+      "tools": [
+        "lm_model_config",
+        "lm_profiles"
+      ],
+      "tests": [
+        "tests/test_operations.py::test_sdk_schema_rejects_ignored_fields_and_inspect_never_loads",
+        "tests/test_operations.py::test_sdk_nested_settings_compare_requested_fields_only"
+      ],
+      "limitation": "Adaptateur Python et schéma installé ; ne couvre pas toute l’API TypeScript. Authentification/HTTPS du SDK limités."
+    },
+    "1_python/5_manage-models/meta.json": {
+      "sha256": "e59c2f96ffc6c2e713b2fb72682aae85a1a8a22350550304e999bac39456ee02",
+      "status": "repository_support",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier de support consultable comme texte ; aucun script ni workflow n’est exécuté."
+    },
+    "1_python/6_model-info/get-context-length.md": {
+      "sha256": "a8a966d3adfbc7f463310986c45a911114992817914da2ef6a74eddace3944e5",
+      "status": "partial",
+      "tools": [
+        "lm_model_config",
+        "lm_profiles"
+      ],
+      "tests": [
+        "tests/test_operations.py::test_sdk_schema_rejects_ignored_fields_and_inspect_never_loads",
+        "tests/test_operations.py::test_sdk_nested_settings_compare_requested_fields_only"
+      ],
+      "limitation": "Adaptateur Python et schéma installé ; ne couvre pas toute l’API TypeScript. Authentification/HTTPS du SDK limités."
+    },
+    "1_python/6_model-info/get-load-config.mdx": {
+      "sha256": "8050990c884cf221e6da3e06213f201e569169690ffd335c7ebbe1754398e41c",
+      "status": "partial",
+      "tools": [
+        "lm_model_config",
+        "lm_profiles"
+      ],
+      "tests": [
+        "tests/test_operations.py::test_sdk_schema_rejects_ignored_fields_and_inspect_never_loads",
+        "tests/test_operations.py::test_sdk_nested_settings_compare_requested_fields_only"
+      ],
+      "limitation": "Adaptateur Python et schéma installé ; ne couvre pas toute l’API TypeScript. Authentification/HTTPS du SDK limités."
+    },
+    "1_python/6_model-info/get-model-info.md": {
+      "sha256": "0bac9d2690f355eb4bd6a65e766b36be592ed52ccf67c27cce17dd43d86edfba",
+      "status": "partial",
+      "tools": [
+        "lm_model_config",
+        "lm_profiles"
+      ],
+      "tests": [
+        "tests/test_operations.py::test_sdk_schema_rejects_ignored_fields_and_inspect_never_loads",
+        "tests/test_operations.py::test_sdk_nested_settings_compare_requested_fields_only"
+      ],
+      "limitation": "Adaptateur Python et schéma installé ; ne couvre pas toute l’API TypeScript. Authentification/HTTPS du SDK limités."
+    },
+    "1_python/6_model-info/meta.json": {
+      "sha256": "e65f8a2aef6f24bc1f9acf871e0072e4658bf7d3668691a5b0af54ffb27db7c7",
+      "status": "repository_support",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier de support consultable comme texte ; aucun script ni workflow n’est exécuté."
+    },
+    "1_python/_7_api-reference/act.md": {
+      "sha256": "3dc9c91c82362c604c4aa4388915c108e37cbe9372fca47c4504c957b797d9d2",
+      "status": "unpublished",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier exclu de la publication officielle ; référence explicite uniquement, contrat non garanti."
+    },
+    "1_python/_7_api-reference/chat.md": {
+      "sha256": "809783c4677af130c5459cbbc0b48e2a2d1736b2e8dadb68527916526f01202b",
+      "status": "unpublished",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier exclu de la publication officielle ; référence explicite uniquement, contrat non garanti."
+    },
+    "1_python/_7_api-reference/complete.md": {
+      "sha256": "d21c05a7d0075a4ad644caa5235dc2b234ab8ae6c80a89c0c3a3a51e5f53b2f5",
+      "status": "unpublished",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier exclu de la publication officielle ; référence explicite uniquement, contrat non garanti."
+    },
+    "1_python/_7_api-reference/count-tokens.md": {
+      "sha256": "da912156f966832a6fe0eaafd79258b489a27114d0402a8b07e5d3183bca6269",
+      "status": "unpublished",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier exclu de la publication officielle ; référence explicite uniquement, contrat non garanti."
+    },
+    "1_python/_7_api-reference/embed.md": {
+      "sha256": "273b8f9738d41a5396b0d6055fb69ad852856412dbff36bb9a280af6fcc05081",
+      "status": "unpublished",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier exclu de la publication officielle ; référence explicite uniquement, contrat non garanti."
+    },
+    "1_python/_7_api-reference/llm-load-model-config.md": {
+      "sha256": "78aac4ddcebc3e20770e7e80114658c605ee50bf00086d759371896e1ed47642",
+      "status": "unpublished",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier exclu de la publication officielle ; référence explicite uniquement, contrat non garanti."
+    },
+    "1_python/_7_api-reference/llm-namespace.md": {
+      "sha256": "78babe88a23881e7e64098ea970a53235d385df6f3bb3c479f190e229ae36bab",
+      "status": "unpublished",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier exclu de la publication officielle ; référence explicite uniquement, contrat non garanti."
+    },
+    "1_python/_7_api-reference/llm-prediction-config-input.md": {
+      "sha256": "b16d9d4efd537f3799a828baacf096eec866cdf9b2d726eb86877a9a25ac9b9c",
+      "status": "unpublished",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier exclu de la publication officielle ; référence explicite uniquement, contrat non garanti."
+    },
+    "1_python/_7_api-reference/lmstudioclient.md": {
+      "sha256": "4e4f0a8d8d63502562a7d5e08a21ca89671dfa00de34d0eb426884803746b9da",
+      "status": "unpublished",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier exclu de la publication officielle ; référence explicite uniquement, contrat non garanti."
+    },
+    "1_python/_7_api-reference/meta.json": {
+      "sha256": "76d87c3992c050f9b0e8c7fec1143b47f49568919dd7405202148d00073a5dfa",
+      "status": "repository_support",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier de support consultable comme texte ; aucun script ni workflow n’est exécuté."
+    },
+    "1_python/_7_api-reference/model.md": {
+      "sha256": "d21ad44759ee9c4d2e697d0de962ba8c415439ffd31d07023c88526f672f0174",
+      "status": "unpublished",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier exclu de la publication officielle ; référence explicite uniquement, contrat non garanti."
+    },
+    "1_python/_7_api-reference/respond.md": {
+      "sha256": "94c095e15be54986f0d832d14706e1e729c288b89e6071d9868ae5b2f4681592",
+      "status": "unpublished",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier exclu de la publication officielle ; référence explicite uniquement, contrat non garanti."
+    },
+    "1_python/_7_api-reference/system-namespace.md": {
+      "sha256": "c7b76ed85b16361e68562644cb994a446b53828386913580f70f8c2b38fb43e6",
+      "status": "unpublished",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier exclu de la publication officielle ; référence explicite uniquement, contrat non garanti."
+    },
+    "1_python/_7_api-reference/tokenize.md": {
+      "sha256": "61be1586dd53225f659e18de76d905a91bd2e853724300488ce6f8dc18e2c8fe",
+      "status": "unpublished",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier exclu de la publication officielle ; référence explicite uniquement, contrat non garanti."
+    },
+    "1_python/_more/_apply-prompt-template.mdx": {
+      "sha256": "ddd8141190c6419e65687025d4bbe43bac7e9727aeb0e448b4cc04c08abc259b",
+      "status": "unpublished",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier exclu de la publication officielle ; référence explicite uniquement, contrat non garanti."
+    },
+    "1_python/_more/meta.json": {
+      "sha256": "fb927f4b1f347bf0f9f06f879d64a4d950790d5fe516d90fb4a37f973168a2ee",
+      "status": "repository_support",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier de support consultable comme texte ; aucun script ni workflow n’est exécuté."
+    },
+    "1_python/index.md": {
+      "sha256": "e2ad6cfada60a11ea981bc445009968152853d2001295fcd8bdc241289b8eb4c",
+      "status": "reference_only",
+      "tools": [],
+      "tests": [],
+      "limitation": "Référence consultable ; aucune couverture fonctionnelle complète ni validation spécifique de cette page revendiquée."
+    },
+    "1_python/meta.json": {
+      "sha256": "33083959b0fb122c7fdc798fc22a3ba75aa15a7bdbb39a1910076dc73ee20a58",
+      "status": "repository_support",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier de support consultable comme texte ; aucun script ni workflow n’est exécuté."
+    },
+    "2_typescript/2_llm-prediction/_index.md": {
+      "sha256": "67039664f9cfc778a9c05346a22a44c04065b70a1c154d14de62a914d27004d8",
+      "status": "unpublished",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier exclu de la publication officielle ; référence explicite uniquement, contrat non garanti."
+    },
+    "2_typescript/2_llm-prediction/cancelling-predictions.mdx": {
+      "sha256": "460f3cedba24e8ff4d3f3d0293c7aafd7989eaac4a26c5f37fb673d6dc5da3d1",
+      "status": "not_exposed",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fonction documentée mais sans outil de pilotage dédié dans ce connecteur."
+    },
+    "2_typescript/2_llm-prediction/chat-completion.md": {
+      "sha256": "e73e63708d2ddb2e2f238f15650eeaa7fad04d9ec356f51d0b768870ab9e5a8e",
+      "status": "reference_only",
+      "tools": [],
+      "tests": [],
+      "limitation": "Référence consultable ; aucune couverture fonctionnelle complète ni validation spécifique de cette page revendiquée."
+    },
+    "2_typescript/2_llm-prediction/completion.mdx": {
+      "sha256": "18f3b8c715a7c811d8319eec7b6be05440936ccbd20a92172a6fd9e220b12fb5",
+      "status": "reference_only",
+      "tools": [],
+      "tests": [],
+      "limitation": "Référence consultable ; aucune couverture fonctionnelle complète ni validation spécifique de cette page revendiquée."
+    },
+    "2_typescript/2_llm-prediction/image-input.mdx": {
+      "sha256": "a3164cdedea07fae03f8c5b8a2679bf7cfe6bc404774ef6ad91ab882f6a5e90e",
+      "status": "reference_only",
+      "tools": [],
+      "tests": [],
+      "limitation": "Référence consultable ; aucune couverture fonctionnelle complète ni validation spécifique de cette page revendiquée."
+    },
+    "2_typescript/2_llm-prediction/meta.json": {
+      "sha256": "8ff7313f99cf26f47734e78a568a928b0fe2df811787dbd878efb2fe016e3d95",
+      "status": "repository_support",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier de support consultable comme texte ; aucun script ni workflow n’est exécuté."
+    },
+    "2_typescript/2_llm-prediction/parameters.md": {
+      "sha256": "3163aedc02e1bce243dbadaf06104aae37d49b16ba9bb18b72eeede165589dd9",
+      "status": "reference_only",
+      "tools": [],
+      "tests": [],
+      "limitation": "Référence consultable ; aucune couverture fonctionnelle complète ni validation spécifique de cette page revendiquée."
+    },
+    "2_typescript/2_llm-prediction/speculative-decoding.md": {
+      "sha256": "ebd15beaf11e1b44a4cb52f4055f3a860d733cc9c93f3b786e178b4cf008e67f",
+      "status": "reference_only",
+      "tools": [],
+      "tests": [],
+      "limitation": "Référence consultable ; aucune couverture fonctionnelle complète ni validation spécifique de cette page revendiquée."
+    },
+    "2_typescript/2_llm-prediction/structured-response.mdx": {
+      "sha256": "95319fcf748322c767236c11807736b6cc5ada4848c37fc66f950bee0af0cb31",
+      "status": "reference_only",
+      "tools": [],
+      "tests": [],
+      "limitation": "Référence consultable ; aucune couverture fonctionnelle complète ni validation spécifique de cette page revendiquée."
+    },
+    "2_typescript/2_llm-prediction/working-with-chats.md": {
+      "sha256": "1856e21bc12bc64778e827da992a202c22c581d8e22c24193e6c2a2d28e10a0b",
+      "status": "reference_only",
+      "tools": [],
+      "tests": [],
+      "limitation": "Référence consultable ; aucune couverture fonctionnelle complète ni validation spécifique de cette page revendiquée."
+    },
+    "2_typescript/3_agent/_index.md": {
+      "sha256": "2f74d0f0334669a01f74fbbd813c1f7c1845a6fbd27ec83b46068b0d49196aef",
+      "status": "unpublished",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier exclu de la publication officielle ; référence explicite uniquement, contrat non garanti."
+    },
+    "2_typescript/3_agent/act.md": {
+      "sha256": "c10c99755ef5c35e7b59b209289a70af765ff6eeeccca0d5054fe86c7458ce64",
+      "status": "reference_only",
+      "tools": [],
+      "tests": [],
+      "limitation": "Référence consultable ; aucune couverture fonctionnelle complète ni validation spécifique de cette page revendiquée."
+    },
+    "2_typescript/3_agent/meta.json": {
+      "sha256": "08682fb4098e22ffdc0feb293a2eec3bc2f981097cd18a238ba7f610924ae9ba",
+      "status": "repository_support",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier de support consultable comme texte ; aucun script ni workflow n’est exécuté."
+    },
+    "2_typescript/3_agent/tools.md": {
+      "sha256": "61c6a6cc135b6a15b0c65601b2e2200a2cb2f672cde1570ca2cdc26e0b05f0c1",
+      "status": "reference_only",
+      "tools": [],
+      "tests": [],
+      "limitation": "Référence consultable ; aucune couverture fonctionnelle complète ni validation spécifique de cette page revendiquée."
+    },
+    "2_typescript/3_plugins/1_tools-provider/custom-configuration.mdx": {
+      "sha256": "9fceece7f8db6c0cdcdb7358d09f6f326f5681bf375625eda110561759a72a1c",
+      "status": "not_exposed",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fonction documentée mais sans outil de pilotage dédié dans ce connecteur."
+    },
+    "2_typescript/3_plugins/1_tools-provider/handling-aborts.md": {
+      "sha256": "55621edd3ca471f8fe87f5f2ec1979490d407bf6543943bd46202dc1473daa25",
+      "status": "not_exposed",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fonction documentée mais sans outil de pilotage dédié dans ce connecteur."
+    },
+    "2_typescript/3_plugins/1_tools-provider/index.md": {
+      "sha256": "3c01f9d7de157e455cc5068adfc332f7b1a4fe92e997e3dbe11fa825b0f652db",
+      "status": "not_exposed",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fonction documentée mais sans outil de pilotage dédié dans ce connecteur."
+    },
+    "2_typescript/3_plugins/1_tools-provider/meta.json": {
+      "sha256": "b611d01878ea9eeb1604e4a94c07115c773c545030796f67da29d31d508a6634",
+      "status": "repository_support",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier de support consultable comme texte ; aucun script ni workflow n’est exécuté."
+    },
+    "2_typescript/3_plugins/1_tools-provider/multiple-tools.md": {
+      "sha256": "7aa6dd0bae4c60f13ce38ba14990ee323a389630ffaf40b063586ae7c4aba8d5",
+      "status": "not_exposed",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fonction documentée mais sans outil de pilotage dédié dans ce connecteur."
+    },
+    "2_typescript/3_plugins/1_tools-provider/single-tool.md": {
+      "sha256": "d974a94d0ff3bd3f60e5e8b85ea647e6859462d4f14360113e0fb3565d476953",
+      "status": "not_exposed",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fonction documentée mais sans outil de pilotage dédié dans ce connecteur."
+    },
+    "2_typescript/3_plugins/1_tools-provider/status-reports-and-warnings.md": {
+      "sha256": "2b1d22d55d83c905f1314074a523d3a626819a94590343e20a47b62418447e8c",
+      "status": "not_exposed",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fonction documentée mais sans outil de pilotage dédié dans ce connecteur."
+    },
+    "2_typescript/3_plugins/2_prompt-preprocessor/custom-configuration.mdx": {
+      "sha256": "67d567c570c02316fd834633771dc538cd608924b87a7a0e91158ab5c0f02026",
+      "status": "not_exposed",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fonction documentée mais sans outil de pilotage dédié dans ce connecteur."
+    },
+    "2_typescript/3_plugins/2_prompt-preprocessor/custom-status-report.md": {
+      "sha256": "2b10e3f40e8c50199c905c311b118ffbfeb21be0c82c1d364daa4315f39fae08",
+      "status": "not_exposed",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fonction documentée mais sans outil de pilotage dédié dans ce connecteur."
+    },
+    "2_typescript/3_plugins/2_prompt-preprocessor/examples.md": {
+      "sha256": "47af8b748aedb1fa5e8285daeac0f60a0f55618663e7a0fc1c8881d7a9d72465",
+      "status": "not_exposed",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fonction documentée mais sans outil de pilotage dédié dans ce connecteur."
+    },
+    "2_typescript/3_plugins/2_prompt-preprocessor/handling-aborts.md": {
+      "sha256": "dd0e7096814c5ec647be31c5f95f72b6c6e7d751378c16f63a051b1f0eb3acad",
+      "status": "not_exposed",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fonction documentée mais sans outil de pilotage dédié dans ce connecteur."
+    },
+    "2_typescript/3_plugins/2_prompt-preprocessor/index.md": {
+      "sha256": "f6e8437fbfdea134d7cb7946b1a5d85672b220ccc74a5b4e33464e00fab0daf3",
+      "status": "not_exposed",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fonction documentée mais sans outil de pilotage dédié dans ce connecteur."
+    },
+    "2_typescript/3_plugins/2_prompt-preprocessor/meta.json": {
+      "sha256": "d6d7402d8a00dff318f1a390ee70cc23c543c74a6cec10cafd6a4974a3c22cf2",
+      "status": "repository_support",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier de support consultable comme texte ; aucun script ni workflow n’est exécuté."
+    },
+    "2_typescript/3_plugins/3_generator/index.md": {
+      "sha256": "fe1a4609b40e3dc1b1903336ce2d1c7780f3604fb12148a4f06e45cd30c1fb88",
+      "status": "not_exposed",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fonction documentée mais sans outil de pilotage dédié dans ce connecteur."
+    },
+    "2_typescript/3_plugins/3_generator/meta.json": {
+      "sha256": "0fe5e37432c622fac4bd1fe88046fd5ad9ace6ada4bf9bc80f6add820b12396e",
+      "status": "repository_support",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier de support consultable comme texte ; aucun script ni workflow n’est exécuté."
+    },
+    "2_typescript/3_plugins/3_generator/text-only-generators.md": {
+      "sha256": "709dbaa06127afeab0b336658b7bfd7c00ba964c768201c23c0e3722e3d63a9b",
+      "status": "not_exposed",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fonction documentée mais sans outil de pilotage dédié dans ce connecteur."
+    },
+    "2_typescript/3_plugins/3_generator/tool-calling-generators.md": {
+      "sha256": "c55f863f3e6047ed04c0462f41f74e0dbe4a3f47e505dc761563285afd11d3ca",
+      "status": "not_exposed",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fonction documentée mais sans outil de pilotage dédié dans ce connecteur."
+    },
+    "2_typescript/3_plugins/4_custom-configuration/accessing-config.md": {
+      "sha256": "0663e3f060f8ad0bba2814643961d8214734be9b5efd6fd9c5a5d29e5952f101",
+      "status": "not_exposed",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fonction documentée mais sans outil de pilotage dédié dans ce connecteur."
+    },
+    "2_typescript/3_plugins/4_custom-configuration/config-ts.md": {
+      "sha256": "1c6d361c30e292a18f61457cf3dd68cb3268758064d1a695ff7f7395df054426",
+      "status": "not_exposed",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fonction documentée mais sans outil de pilotage dédié dans ce connecteur."
+    },
+    "2_typescript/3_plugins/4_custom-configuration/defining-new-fields.md": {
+      "sha256": "534a3bee7f1c26e3b8eef814be73414bf976fbaab6caad519b92661da6b7aa79",
+      "status": "not_exposed",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fonction documentée mais sans outil de pilotage dédié dans ce connecteur."
+    },
+    "2_typescript/3_plugins/4_custom-configuration/index.md": {
+      "sha256": "b67df9e576864ad39b8707055162ad133f091b70cc710a846fdd02eef01c3750",
+      "status": "not_exposed",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fonction documentée mais sans outil de pilotage dédié dans ce connecteur."
+    },
+    "2_typescript/3_plugins/4_custom-configuration/meta.json": {
+      "sha256": "b279ff152bf4feb959b817fd526c48bd0f2e72e5e217c6fb03ea255934faee11",
+      "status": "repository_support",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier de support consultable comme texte ; aucun script ni workflow n’est exécuté."
+    },
+    "2_typescript/3_plugins/5_publish-plugins/index.md": {
+      "sha256": "12afdb51fd8aa309288b710b6fadd3eb8721c71dfe08517121417ecdbc2604cf",
+      "status": "not_exposed",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fonction documentée mais sans outil de pilotage dédié dans ce connecteur."
+    },
+    "2_typescript/3_plugins/dependencies.md": {
+      "sha256": "16fb395e3aa7880284bd5650231c73315502185abc7b0b4fe1874c14b1e28ddb",
+      "status": "not_exposed",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fonction documentée mais sans outil de pilotage dédié dans ce connecteur."
+    },
+    "2_typescript/3_plugins/index.md": {
+      "sha256": "5e7217c317a12a5c58a44b8f76a616a4edd154bcba590cf96b5e0f8cdf3f44f1",
+      "status": "not_exposed",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fonction documentée mais sans outil de pilotage dédié dans ce connecteur."
+    },
+    "2_typescript/3_plugins/meta.json": {
+      "sha256": "d94ae2a225af370cc6096083595d60484c76d06aff3e6710df015f61750f373f",
+      "status": "repository_support",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier de support consultable comme texte ; aucun script ni workflow n’est exécuté."
+    },
+    "2_typescript/4_embedding/index.md": {
+      "sha256": "61e7b1c60c8fb95c5fb8ee877eb85dcc78a6102e975667ed05ece11664cb1159",
+      "status": "reference_only",
+      "tools": [],
+      "tests": [],
+      "limitation": "Référence consultable ; aucune couverture fonctionnelle complète ni validation spécifique de cette page revendiquée."
+    },
+    "2_typescript/5_tokenization/index.md": {
+      "sha256": "31069f1e13c7d046b9b684e2badcc6f75320faae0000839d82c863b7471b84d8",
+      "status": "not_exposed",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fonction documentée mais sans outil de pilotage dédié dans ce connecteur."
+    },
+    "2_typescript/6_manage-models/_download-models.md": {
+      "sha256": "61ba87d8d5585118438568a32b6a889ace1545576b158acaad40874bb2654a60",
+      "status": "unpublished",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier exclu de la publication officielle ; référence explicite uniquement, contrat non garanti."
+    },
+    "2_typescript/6_manage-models/list-downloaded.md": {
+      "sha256": "0cc11d2361f811ddb1c159bcfabea183c22b2227aa7a8795a97bd07b3210b6d4",
+      "status": "reference_only",
+      "tools": [],
+      "tests": [],
+      "limitation": "Référence consultable ; aucune couverture fonctionnelle complète ni validation spécifique de cette page revendiquée."
+    },
+    "2_typescript/6_manage-models/list-loaded.md": {
+      "sha256": "923749ade7b565111bfa312f0cb4b61e65d7d33de63b75931344c2927ba2780d",
+      "status": "reference_only",
+      "tools": [],
+      "tests": [],
+      "limitation": "Référence consultable ; aucune couverture fonctionnelle complète ni validation spécifique de cette page revendiquée."
+    },
+    "2_typescript/6_manage-models/loading.md": {
+      "sha256": "bc9f04529d4b715caf7dfbecd3ea8420a4ec16485f8def90f5129853745d325c",
+      "status": "reference_only",
+      "tools": [],
+      "tests": [],
+      "limitation": "Référence consultable ; aucune couverture fonctionnelle complète ni validation spécifique de cette page revendiquée."
+    },
+    "2_typescript/6_manage-models/meta.json": {
+      "sha256": "e59c2f96ffc6c2e713b2fb72682aae85a1a8a22350550304e999bac39456ee02",
+      "status": "repository_support",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier de support consultable comme texte ; aucun script ni workflow n’est exécuté."
+    },
+    "2_typescript/7_api-reference/_act.md": {
+      "sha256": "3dc9c91c82362c604c4aa4388915c108e37cbe9372fca47c4504c957b797d9d2",
+      "status": "unpublished",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier exclu de la publication officielle ; référence explicite uniquement, contrat non garanti."
+    },
+    "2_typescript/7_api-reference/_chat.md": {
+      "sha256": "809783c4677af130c5459cbbc0b48e2a2d1736b2e8dadb68527916526f01202b",
+      "status": "unpublished",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier exclu de la publication officielle ; référence explicite uniquement, contrat non garanti."
+    },
+    "2_typescript/7_api-reference/_complete.md": {
+      "sha256": "d21c05a7d0075a4ad644caa5235dc2b234ab8ae6c80a89c0c3a3a51e5f53b2f5",
+      "status": "unpublished",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier exclu de la publication officielle ; référence explicite uniquement, contrat non garanti."
+    },
+    "2_typescript/7_api-reference/_count-tokens.md": {
+      "sha256": "da912156f966832a6fe0eaafd79258b489a27114d0402a8b07e5d3183bca6269",
+      "status": "unpublished",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier exclu de la publication officielle ; référence explicite uniquement, contrat non garanti."
+    },
+    "2_typescript/7_api-reference/_embed.md": {
+      "sha256": "273b8f9738d41a5396b0d6055fb69ad852856412dbff36bb9a280af6fcc05081",
+      "status": "unpublished",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier exclu de la publication officielle ; référence explicite uniquement, contrat non garanti."
+    },
+    "2_typescript/7_api-reference/_llm-namespace.md": {
+      "sha256": "78babe88a23881e7e64098ea970a53235d385df6f3bb3c479f190e229ae36bab",
+      "status": "unpublished",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier exclu de la publication officielle ; référence explicite uniquement, contrat non garanti."
+    },
+    "2_typescript/7_api-reference/_lmstudioclient.md": {
+      "sha256": "4e4f0a8d8d63502562a7d5e08a21ca89671dfa00de34d0eb426884803746b9da",
+      "status": "unpublished",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier exclu de la publication officielle ; référence explicite uniquement, contrat non garanti."
+    },
+    "2_typescript/7_api-reference/_model.md": {
+      "sha256": "d21ad44759ee9c4d2e697d0de962ba8c415439ffd31d07023c88526f672f0174",
+      "status": "unpublished",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier exclu de la publication officielle ; référence explicite uniquement, contrat non garanti."
+    },
+    "2_typescript/7_api-reference/_respond.md": {
+      "sha256": "94c095e15be54986f0d832d14706e1e729c288b89e6071d9868ae5b2f4681592",
+      "status": "unpublished",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier exclu de la publication officielle ; référence explicite uniquement, contrat non garanti."
+    },
+    "2_typescript/7_api-reference/_system-namespace.md": {
+      "sha256": "c7b76ed85b16361e68562644cb994a446b53828386913580f70f8c2b38fb43e6",
+      "status": "unpublished",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier exclu de la publication officielle ; référence explicite uniquement, contrat non garanti."
+    },
+    "2_typescript/7_api-reference/_tokenize.md": {
+      "sha256": "61be1586dd53225f659e18de76d905a91bd2e853724300488ce6f8dc18e2c8fe",
+      "status": "unpublished",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier exclu de la publication officielle ; référence explicite uniquement, contrat non garanti."
+    },
+    "2_typescript/7_api-reference/llm-load-model-config.md": {
+      "sha256": "f7793d8fa18af114b550b8f6f173ffdb51752ed01528460962e095fd6ddaa33e",
+      "status": "partial",
+      "tools": [
+        "lm_model_config",
+        "lm_profiles"
+      ],
+      "tests": [
+        "tests/test_operations.py::test_sdk_schema_rejects_ignored_fields_and_inspect_never_loads",
+        "tests/test_operations.py::test_sdk_nested_settings_compare_requested_fields_only"
+      ],
+      "limitation": "Adaptateur Python et schéma installé ; ne couvre pas toute l’API TypeScript. Authentification/HTTPS du SDK limités."
+    },
+    "2_typescript/7_api-reference/llm-prediction-config-input.md": {
+      "sha256": "b16d9d4efd537f3799a828baacf096eec866cdf9b2d726eb86877a9a25ac9b9c",
+      "status": "reference_only",
+      "tools": [],
+      "tests": [],
+      "limitation": "Référence consultable ; aucune couverture fonctionnelle complète ni validation spécifique de cette page revendiquée."
+    },
+    "2_typescript/7_api-reference/meta.json": {
+      "sha256": "6e7be623d9675efaa5b687a33b348544390715bc8a27f9e1571e31707412d714",
+      "status": "repository_support",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier de support consultable comme texte ; aucun script ni workflow n’est exécuté."
+    },
+    "2_typescript/8_model-info/_get-load-config.mdx": {
+      "sha256": "cb9cd091e6beea34f129b1bf8b6b70f71e117277507bc82cf783edb52b9de125",
+      "status": "unpublished",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier exclu de la publication officielle ; référence explicite uniquement, contrat non garanti."
+    },
+    "2_typescript/8_model-info/get-context-length.md": {
+      "sha256": "b544f4499b2b577891c97e6b0816ca491b235abcf78d1ef682ec3f83c3fdbe0a",
+      "status": "reference_only",
+      "tools": [],
+      "tests": [],
+      "limitation": "Référence consultable ; aucune couverture fonctionnelle complète ni validation spécifique de cette page revendiquée."
+    },
+    "2_typescript/8_model-info/get-model-info.md": {
+      "sha256": "3e5b53a5c6219c67cae5a57a522fbaeaae56ea58ee68de768696086bae7d27cc",
+      "status": "reference_only",
+      "tools": [],
+      "tests": [],
+      "limitation": "Référence consultable ; aucune couverture fonctionnelle complète ni validation spécifique de cette page revendiquée."
+    },
+    "2_typescript/8_model-info/meta.json": {
+      "sha256": "cc2bf1846f94133924f120c0be5cac91976652c12018d4ae03811a3ff5bb9e2e",
+      "status": "repository_support",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier de support consultable comme texte ; aucun script ni workflow n’est exécuté."
+    },
+    "2_typescript/_more/_apply-prompt-template.mdx": {
+      "sha256": "13be79680074d4e51bb033f80f93343ff461c4445f22e7b526dac8d5b7969554",
+      "status": "unpublished",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier exclu de la publication officielle ; référence explicite uniquement, contrat non garanti."
+    },
+    "2_typescript/_more/meta.json": {
+      "sha256": "fb927f4b1f347bf0f9f06f879d64a4d950790d5fe516d90fb4a37f973168a2ee",
+      "status": "repository_support",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier de support consultable comme texte ; aucun script ni workflow n’est exécuté."
+    },
+    "2_typescript/authentication.mdx": {
+      "sha256": "d317fc6e5a7b32ebbe1a0c0e2e5c513b1c182d4f750e46e228246bffaa1fec12",
+      "status": "reference_only",
+      "tools": [],
+      "tests": [],
+      "limitation": "Référence consultable ; aucune couverture fonctionnelle complète ni validation spécifique de cette page revendiquée."
+    },
+    "2_typescript/index.md": {
+      "sha256": "8ddcb567de2708bb4397acbad282adf55ec37ba302381efa6fc87036e0ca2d12",
+      "status": "reference_only",
+      "tools": [],
+      "tests": [],
+      "limitation": "Référence consultable ; aucune couverture fonctionnelle complète ni validation spécifique de cette page revendiquée."
+    },
+    "2_typescript/meta.json": {
+      "sha256": "e4ad4c76f6197629c0d0d141e141d7ea18dcf6c5bb58855898f97466f9cfc0c0",
+      "status": "repository_support",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier de support consultable comme texte ; aucun script ni workflow n’est exécuté."
+    },
+    "2_typescript/project-setup.md": {
+      "sha256": "09c874de899265a9aa5a2be22bc6543739e6a5907914729d5bc52d6aa79e7f92",
+      "status": "reference_only",
+      "tools": [],
+      "tests": [],
+      "limitation": "Référence consultable ; aucune couverture fonctionnelle complète ni validation spécifique de cette page revendiquée."
+    },
+    "3_cli/0_local-models/chat.md": {
+      "sha256": "48c33c1702e0d3c65eb70ca800f8b4f130454b8235c42886624bccc243d01117",
+      "status": "reference_only",
+      "tools": [],
+      "tests": [],
+      "limitation": "Référence consultable ; aucune couverture fonctionnelle complète ni validation spécifique de cette page revendiquée."
+    },
+    "3_cli/0_local-models/get.md": {
+      "sha256": "c4ee735d9b317e5858512cb371cba4b1f4f17e48f1d9d7104405b91472e7e578",
+      "status": "partial",
+      "tools": [
+        "lm_download",
+        "lm_download_status"
+      ],
+      "tests": [
+        "tests/test_connector.py::test_download_status_endpoint"
+      ],
+      "limitation": "Contrat simulé ; pas de téléchargement massif dans les tests réels, ni de pilotage du catalogue graphique."
+    },
+    "3_cli/0_local-models/import.md": {
+      "sha256": "69ee7ccc624578094f08fa64d0a7ac01b89f4582f44f573ab8cb771e86f81f3e",
+      "status": "partial",
+      "tools": [
+        "lm_import_model"
+      ],
+      "tests": [
+        "scripts/operations_smoke.py"
+      ],
+      "limitation": "Prévisualisation/import GGUF par copie ; import massif non exercé."
+    },
+    "3_cli/0_local-models/load.md": {
+      "sha256": "15d2e5dd2c51712dbd17d792bf741d3fb688eebcaa9b17f49a503f25177a2fab",
+      "status": "partial",
+      "tools": [
+        "lm_load_advanced",
+        "lm_estimate"
+      ],
+      "tests": [
+        "tests/test_connector.py::test_cli_rejects_unsupported_flags_before_loading"
+      ],
+      "limitation": "Flags disponibles vérifiés ; résultats spéculatifs et performances non validés pour tous les matériels."
+    },
+    "3_cli/0_local-models/ls.md": {
+      "sha256": "23b6bbf6ce33e9ca2a68270c4a9f03503a7d614820846018a66544881522e2c2",
+      "status": "partial",
+      "tools": [
+        "lm_models"
+      ],
+      "tests": [
+        "tests/test_connector.py::test_per_call_preflight_and_cached_upstream"
+      ],
+      "limitation": "Liste et capacités via REST ; les exemples CLI/SDK ne sont pas tous reproduits."
+    },
+    "3_cli/0_local-models/meta.json": {
+      "sha256": "ef1984246b37e3ac2d5b323eb2405aa5251fad8d85a1d38fb9591978c2a25a6e",
+      "status": "repository_support",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier de support consultable comme texte ; aucun script ni workflow n’est exécuté."
+    },
+    "3_cli/0_local-models/ps.md": {
+      "sha256": "bea8c08cb02994a31928ecf51968dd205c2c605c2a43c6124214591ccd690c7a",
+      "status": "partial",
+      "tools": [
+        "lm_models"
+      ],
+      "tests": [
+        "tests/test_connector.py::test_per_call_preflight_and_cached_upstream"
+      ],
+      "limitation": "Liste et capacités via REST ; les exemples CLI/SDK ne sont pas tous reproduits."
+    },
+    "3_cli/1_serve/log-stream.md": {
+      "sha256": "3e1108b253049e6813802d0ec13d683e093435b389beaee0720281bf7e095420",
+      "status": "partial",
+      "tools": [
+        "lm_diagnose"
+      ],
+      "tests": [
+        "tests/test_operations.py::test_diagnostics_returns_signals_without_raw_logs"
+      ],
+      "limitation": "Diagnostic matériel et signaux de logs expurgés ; pas de diffusion des prompts/logs bruts ni garantie de cause racine."
+    },
+    "3_cli/1_serve/meta.json": {
+      "sha256": "b08288408d23265efa27c67eb4785d8ab5300415bdcfce498546690db6f62a73",
+      "status": "repository_support",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier de support consultable comme texte ; aucun script ni workflow n’est exécuté."
+    },
+    "3_cli/1_serve/server-start.mdx": {
+      "sha256": "a24c26863dbfbfb3ffe31917fe437e661cda508fa8a322553e0ef78f66cdde28",
+      "status": "partial",
+      "tools": [
+        "lm_server_control",
+        "lm_status"
+      ],
+      "tests": [
+        "scripts/server_smoke.py"
+      ],
+      "limitation": "Démarrage/arrêt/statut sur loopback ; commutateurs GUI, CORS et exposition LAN non modifiés."
+    },
+    "3_cli/1_serve/server-status.md": {
+      "sha256": "41518a88f5219615e864e515de0fd4ee4d0ef47617ea86c703a22e07194fd201",
+      "status": "partial",
+      "tools": [
+        "lm_server_control",
+        "lm_status"
+      ],
+      "tests": [
+        "scripts/server_smoke.py"
+      ],
+      "limitation": "Démarrage/arrêt/statut sur loopback ; commutateurs GUI, CORS et exposition LAN non modifiés."
+    },
+    "3_cli/1_serve/server-stop.md": {
+      "sha256": "5e92ed7857f9221e45c93f402ef7df81d76742b4957646e843f207b259de5b9a",
+      "status": "partial",
+      "tools": [
+        "lm_server_control",
+        "lm_status"
+      ],
+      "tests": [
+        "scripts/server_smoke.py"
+      ],
+      "limitation": "Démarrage/arrêt/statut sur loopback ; commutateurs GUI, CORS et exposition LAN non modifiés."
+    },
+    "3_cli/2_daemon/daemon-down.mdx": {
+      "sha256": "adbf1d0989ff79766a44b4e49417bfbaf60dd41579d0128f56258229f0a20b0e",
+      "status": "not_exposed",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fonction documentée mais sans outil de pilotage dédié dans ce connecteur."
+    },
+    "3_cli/2_daemon/daemon-status.md": {
+      "sha256": "b21abb5d2b6df45bdf9e854d1179419d9faba5b701741da8a694ad72a855edef",
+      "status": "not_exposed",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fonction documentée mais sans outil de pilotage dédié dans ce connecteur."
+    },
+    "3_cli/2_daemon/daemon-up.md": {
+      "sha256": "fafc0b65f22ae56b93f6ce30e94cec63beea33e4a615c74f342d0309f326e53d",
+      "status": "not_exposed",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fonction documentée mais sans outil de pilotage dédié dans ce connecteur."
+    },
+    "3_cli/2_daemon/daemon-update.md": {
+      "sha256": "7961bd72a1dc7d38151f8010aa668d6fbd6debbd06e63b36a31b83e1a64a9b72",
+      "status": "not_exposed",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fonction documentée mais sans outil de pilotage dédié dans ce connecteur."
+    },
+    "3_cli/2_daemon/meta.json": {
+      "sha256": "03b7e1fe786bbaeb71dcb7fb26538372e22abfd8cc461ac35d108227ff027983",
+      "status": "repository_support",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier de support consultable comme texte ; aucun script ni workflow n’est exécuté."
+    },
+    "3_cli/3_link/link-disable.md": {
+      "sha256": "61b132520e849380fb92be691073c368700f8f4bc2d2626e643c60d23c327c19",
+      "status": "partial",
+      "tools": [
+        "lm_link"
+      ],
+      "tests": [
+        "scripts/operations_smoke.py"
+      ],
+      "limitation": "Statut exercé ; actions et connexion entre deux machines non validées en conditions réelles."
+    },
+    "3_cli/3_link/link-enable.mdx": {
+      "sha256": "413ca5086997b3ddafef05e7c31ad57a08b2cfef72c276cdcb82352809784359",
+      "status": "partial",
+      "tools": [
+        "lm_link"
+      ],
+      "tests": [
+        "scripts/operations_smoke.py"
+      ],
+      "limitation": "Statut exercé ; actions et connexion entre deux machines non validées en conditions réelles."
+    },
+    "3_cli/3_link/link-set-device-name.md": {
+      "sha256": "4dc2af1a3d369f5d9eca02dd173c38823021f54bfe836ae8d5e8d6b26931d455",
+      "status": "partial",
+      "tools": [
+        "lm_link"
+      ],
+      "tests": [
+        "scripts/operations_smoke.py"
+      ],
+      "limitation": "Statut exercé ; actions et connexion entre deux machines non validées en conditions réelles."
+    },
+    "3_cli/3_link/link-set-preferred-device.md": {
+      "sha256": "7d4308dbc8feb7e33fc464fcd006305fc3762c43eddd31da49796f5e8150f54c",
+      "status": "partial",
+      "tools": [
+        "lm_link"
+      ],
+      "tests": [
+        "scripts/operations_smoke.py"
+      ],
+      "limitation": "Statut exercé ; actions et connexion entre deux machines non validées en conditions réelles."
+    },
+    "3_cli/3_link/link-status.md": {
+      "sha256": "583b6d39e430b964d6189deae64229ffaeb0094055da0427eb060ffbde950469",
+      "status": "partial",
+      "tools": [
+        "lm_link"
+      ],
+      "tests": [
+        "scripts/operations_smoke.py"
+      ],
+      "limitation": "Statut exercé ; actions et connexion entre deux machines non validées en conditions réelles."
+    },
+    "3_cli/3_link/meta.json": {
+      "sha256": "316a9f2e5c6ec2fa67103d6732ecc684fafe1f7c39c2122870722deb9d9beccc",
+      "status": "repository_support",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier de support consultable comme texte ; aucun script ni workflow n’est exécuté."
+    },
+    "3_cli/4_runtime/meta.json": {
+      "sha256": "ddaa91a6c3594f2eaf2e0576cca87873c6376903d5ff543d40894e055d463a09",
+      "status": "repository_support",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier de support consultable comme texte ; aucun script ni workflow n’est exécuté."
+    },
+    "3_cli/4_runtime/runtime.md": {
+      "sha256": "a2bc3d77044c24a7968528eebd00378c670f01a19a17dd386771b68301b98d80",
+      "status": "partial",
+      "tools": [
+        "lm_runtime"
+      ],
+      "tests": [
+        "scripts/operations_smoke.py"
+      ],
+      "limitation": "Inspection et mise à jour stable explicite ; installation effective non exercée pendant la validation."
+    },
+    "3_cli/5_develop-and-publish/clone.md": {
+      "sha256": "0d96a7c97073c39ca89e3d53eee99369a5b94344bf031a753705546660fcec26",
+      "status": "not_exposed",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fonction documentée mais sans outil de pilotage dédié dans ce connecteur."
+    },
+    "3_cli/5_develop-and-publish/dev.md": {
+      "sha256": "65c263f52bb7ff3b203084ae9f7d22975256dac04994266d87dba982317eb2d3",
+      "status": "not_exposed",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fonction documentée mais sans outil de pilotage dédié dans ce connecteur."
+    },
+    "3_cli/5_develop-and-publish/login.md": {
+      "sha256": "f208e2f04a9bf337ad1b7060394a6166e3af4a06750966b444555ac01b2e91e7",
+      "status": "not_exposed",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fonction documentée mais sans outil de pilotage dédié dans ce connecteur."
+    },
+    "3_cli/5_develop-and-publish/meta.json": {
+      "sha256": "e82a3ed5199f6eeb9c0a10b55fd8337cfd2a7dd9df30c794a0e9c0aa67c9f9bb",
+      "status": "repository_support",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier de support consultable comme texte ; aucun script ni workflow n’est exécuté."
+    },
+    "3_cli/5_develop-and-publish/push.md": {
+      "sha256": "458a4c65b4f19baa00c01dead418749d4dd0c52930d479164b5624b8ad65d125",
+      "status": "not_exposed",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fonction documentée mais sans outil de pilotage dédié dans ce connecteur."
+    },
+    "3_cli/_lms-load.md": {
+      "sha256": "79b41ced91ad8b2eef81597864d1ba7390369339bb93921b61d96b8e25aa5ab1",
+      "status": "unpublished",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier exclu de la publication officielle ; référence explicite uniquement, contrat non garanti."
+    },
+    "3_cli/contributing.md": {
+      "sha256": "1d690066be07aa12137de3bbdcfdd3d14b4d65477d9938d5bbeac78c94cbdb53",
+      "status": "reference_only",
+      "tools": [],
+      "tests": [],
+      "limitation": "Référence consultable ; aucune couverture fonctionnelle complète ni validation spécifique de cette page revendiquée."
+    },
+    "3_cli/index.mdx": {
+      "sha256": "7dbc92a8a95b845bbe7b705d39f94c6771f458b7533d6da6047ad8b70b5d124b",
+      "status": "reference_only",
+      "tools": [],
+      "tests": [],
+      "limitation": "Référence consultable ; aucune couverture fonctionnelle complète ni validation spécifique de cette page revendiquée."
+    },
+    "3_cli/meta.json": {
+      "sha256": "b0dd0753dd5494bc2ef58ae10d5a900abcb5cd4116dda7874f6a5ba4d2e0ec61",
+      "status": "repository_support",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier de support consultable comme texte ; aucun script ni workflow n’est exécuté."
+    },
+    "4_integrations/1_mcp-remote/index.md": {
+      "sha256": "ff130c3bfe241d845a7dfa042f4fa519ccba59980abf026e17043810c0624530",
+      "status": "reference_only",
+      "tools": [],
+      "tests": [],
+      "limitation": "Référence consultable ; aucune couverture fonctionnelle complète ni validation spécifique de cette page revendiquée."
+    },
+    "4_integrations/1_mcp-remote/meta.json": {
+      "sha256": "2908e418235711bc921753a0a9cdd03be3dd55c850240d5a071b1ad26366baac",
+      "status": "repository_support",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier de support consultable comme texte ; aucun script ni workflow n’est exécuté."
+    },
+    "4_integrations/1_mcp-remote/popular.mdx": {
+      "sha256": "e5303d5c6f9e04cb5444ff56d0fbd5b9a4d0d9baa338d895f6486e333cc6a19a",
+      "status": "reference_only",
+      "tools": [],
+      "tests": [],
+      "limitation": "Référence consultable ; aucune couverture fonctionnelle complète ni validation spécifique de cette page revendiquée."
+    },
+    "4_integrations/claude-code.mdx": {
+      "sha256": "24b773f921f133b0c86d0f29007d904da3a3a98fe141fb3791550bae0f1097e0",
+      "status": "reference_only",
+      "tools": [],
+      "tests": [],
+      "limitation": "Référence consultable ; aucune couverture fonctionnelle complète ni validation spécifique de cette page revendiquée."
+    },
+    "4_integrations/codex.mdx": {
+      "sha256": "9039f683e15a8c37f891340b7f07941fb8667a32d6d9367487a24f70f10d9a27",
+      "status": "reference_only",
+      "tools": [],
+      "tests": [],
+      "limitation": "Référence consultable ; aucune couverture fonctionnelle complète ni validation spécifique de cette page revendiquée."
+    },
+    "4_integrations/hermes.mdx": {
+      "sha256": "62fcb708cd276b7f9aa75385685863a98cfadf6c631e321494ad25859b935401",
+      "status": "reference_only",
+      "tools": [],
+      "tests": [],
+      "limitation": "Référence consultable ; aucune couverture fonctionnelle complète ni validation spécifique de cette page revendiquée."
+    },
+    "4_integrations/index.md": {
+      "sha256": "5f6f61c47c35d82504d0e1d66ba2c1425db458023c55822738d99aec7e7b31d1",
+      "status": "reference_only",
+      "tools": [],
+      "tests": [],
+      "limitation": "Référence consultable ; aucune couverture fonctionnelle complète ni validation spécifique de cette page revendiquée."
+    },
+    "4_integrations/lmlink.md": {
+      "sha256": "6d1101b18dc60aca47d972f8a9ed51127cf25db67ed382fcc014dc2ae1b217d4",
+      "status": "reference_only",
+      "tools": [],
+      "tests": [],
+      "limitation": "Référence consultable ; aucune couverture fonctionnelle complète ni validation spécifique de cette page revendiquée."
+    },
+    "4_integrations/meta.json": {
+      "sha256": "665bafa0c34dd334740b81f420eab4114e3f97154f464c1167a8dc850a161b5e",
+      "status": "repository_support",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier de support consultable comme texte ; aucun script ni workflow n’est exécuté."
+    },
+    "4_integrations/openclaw.mdx": {
+      "sha256": "382317622442f2d45c8a88ab03f10f7fc4cc8049fe61bed3441d44ee6b9760f8",
+      "status": "reference_only",
+      "tools": [],
+      "tests": [],
+      "limitation": "Référence consultable ; aucune couverture fonctionnelle complète ni validation spécifique de cette page revendiquée."
+    },
+    "5_lmlink/1_basics/add-device.md": {
+      "sha256": "da0a83289c69483b3d06ea5db8290369697d7d61cb578b3628c8384b712f1a6c",
+      "status": "reference_only",
+      "tools": [],
+      "tests": [],
+      "limitation": "Référence consultable ; aucune couverture fonctionnelle complète ni validation spécifique de cette page revendiquée."
+    },
+    "5_lmlink/1_basics/faq.md": {
+      "sha256": "8abe32be00a02d72f2183341acc837b5f7182d58ef7abfbb662c85d2d736327d",
+      "status": "reference_only",
+      "tools": [],
+      "tests": [],
+      "limitation": "Référence consultable ; aucune couverture fonctionnelle complète ni validation spécifique de cette page revendiquée."
+    },
+    "5_lmlink/1_basics/index.md": {
+      "sha256": "2c46364f83868976fdbafffcb0cb29c07e5b95135c6c78bad5213ec501f65920",
+      "status": "reference_only",
+      "tools": [],
+      "tests": [],
+      "limitation": "Référence consultable ; aucune couverture fonctionnelle complète ni validation spécifique de cette page revendiquée."
+    },
+    "5_lmlink/1_basics/meta.json": {
+      "sha256": "7803e194e90407549fc1ee6bdbc40b4b0e5f83488096c03f3ae3d8917e8e2763",
+      "status": "repository_support",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier de support consultable comme texte ; aucun script ni workflow n’est exécuté."
+    },
+    "5_lmlink/1_basics/preferred-device.md": {
+      "sha256": "310492fa0fe983eac1fa6283fd9bc24cd2895b6eeac9a299bf47cac7d3dc0f04",
+      "status": "reference_only",
+      "tools": [],
+      "tests": [],
+      "limitation": "Référence consultable ; aucune couverture fonctionnelle complète ni validation spécifique de cette page revendiquée."
+    },
+    "5_lmlink/index.md": {
+      "sha256": "8004b32327f23475c554e811cd035ca95eb66ac97d044eb773024b6fb82f21cf",
+      "status": "reference_only",
+      "tools": [],
+      "tests": [],
+      "limitation": "Référence consultable ; aucune couverture fonctionnelle complète ni validation spécifique de cette page revendiquée."
+    },
+    "5_lmlink/lmlink-in-locally.mdx": {
+      "sha256": "ab6cc36e5d8a5b7d4d28af3f222a81e3029cff872b2f410c1543a524b8128a7b",
+      "status": "reference_only",
+      "tools": [],
+      "tests": [],
+      "limitation": "Référence consultable ; aucune couverture fonctionnelle complète ni validation spécifique de cette page revendiquée."
+    },
+    "5_lmlink/meta.json": {
+      "sha256": "02ced66989a89a774b8d7fa0feffad9809d666bc9279a495576fe7e0e70eacd6",
+      "status": "repository_support",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier de support consultable comme texte ; aucun script ni workflow n’est exécuté."
+    },
+    "CONTRIBUTING.md": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "status": "reference_only",
+      "tools": [],
+      "tests": [],
+      "limitation": "Référence consultable ; aucune couverture fonctionnelle complète ni validation spécifique de cette page revendiquée."
+    },
+    "README.md": {
+      "sha256": "753625f39f0a4f8acbfa1c7282a04b996e182f38a29126f24343a616b6210e16",
+      "status": "reference_only",
+      "tools": [],
+      "tests": [],
+      "limitation": "Référence consultable ; aucune couverture fonctionnelle complète ni validation spécifique de cette page revendiquée."
+    },
+    "_assets/README.md": {
+      "sha256": "5334b3102256f80d4c9b3dd3f610342a7e5fa4e51aa7de88f3fa3cd894d00652",
+      "status": "unpublished",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier exclu de la publication officielle ; référence explicite uniquement, contrat non garanti."
+    },
+    "_assets/nvidia-spark-playbook/README.md": {
+      "sha256": "ebb3c8401c24609413a450b8ced6316946f801ccfb18c8a6902c3c331ddcc2a1",
+      "status": "unpublished",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier exclu de la publication officielle ; référence explicite uniquement, contrat non garanti."
+    },
+    "_assets/nvidia-spark-playbook/bash/run.sh": {
+      "sha256": "0433eb97feba44ccd7902ee3b4212dffb246088eeb4f849bc97ad0163101b143",
+      "status": "repository_support",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier de support consultable comme texte ; aucun script ni workflow n’est exécuté."
+    },
+    "_assets/nvidia-spark-playbook/js/run.js": {
+      "sha256": "954d6f21abf62b622e5de0b5567668e3cfd82ab1a20da9a3238eec6f89cff0b7",
+      "status": "repository_support",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier de support consultable comme texte ; aucun script ni workflow n’est exécuté."
+    },
+    "_assets/nvidia-spark-playbook/py/run.py": {
+      "sha256": "40f1c6c63b406722de1394cea6026ce45a159c43da189697548ed3764fbaf93b",
+      "status": "repository_support",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier de support consultable comme texte ; aucun script ni workflow n’est exécuté."
+    },
+    "_configuration/_load.md": {
+      "sha256": "5ba711c966f1b60a8bc310997ebd17c0df4f96e96c34bdd460174e9a41350b45",
+      "status": "unpublished",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier exclu de la publication officielle ; référence explicite uniquement, contrat non garanti."
+    },
+    "_configuration/inference.md": {
+      "sha256": "90bbaeeb3aca0e67b3521b01722367d07b0990e07e14c0a01ad75fc8b3edd859",
+      "status": "unpublished",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier exclu de la publication officielle ; référence explicite uniquement, contrat non garanti."
+    },
+    "_configuration/lm-runtimes.md": {
+      "sha256": "ed1f1d4e81bf4a0c8922f5d62a33972a1641c59048476d28095b71379bae6727",
+      "status": "unpublished",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier exclu de la publication officielle ; référence explicite uniquement, contrat non garanti."
+    },
+    "_template_dont_edit.mdx": {
+      "sha256": "169f7f9fd8e700d8cc8be5cdff98f5833b4e6079f71b4dee56ed3f1274854b11",
+      "status": "unpublished",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier exclu de la publication officielle ; référence explicite uniquement, contrat non garanti."
+    },
+    "meta.json": {
+      "sha256": "f14a40f5efdad8df1bf82478d39cef69b0e31e6f7359117dddb0aa8a441f676c",
+      "status": "repository_support",
+      "tools": [],
+      "tests": [],
+      "limitation": "Fichier de support consultable comme texte ; aucun script ni workflow n’est exécuté."
+    }
+  }
+}

@@ -1,6 +1,6 @@
 ![LM Studio Local MCP — modèles, connecteurs et RAG, bannière vert et crème](assets/banner-lmstudio-mcp.png)
 
-# LM Studio ↔ Codex — MCP 2.0
+# LM Studio ↔ Codex — MCP 2.1
 
 Serveur MCP indépendant pour administrer LM Studio et utiliser des modèles locaux depuis un client MCP. Il utilise l’API native `/api/v1`, l’API compatible OpenAI, la commande officielle `lms` et le SDK Python officiel. Il expose **28 outils** : administration, inférence, réglages, documentation, connecteurs et RAG. Les versions Python sont verrouillées dans `uv.lock`.
 
@@ -48,9 +48,10 @@ Par défaut, l’inférence s’exécute sur la machine locale. Les résultats d
 
 1. Lecture de la version de l’application installée et des moteurs présents.
 2. Vérification réelle de `/api/v1/models` et de sa structure.
-3. Contrôle de la fraîcheur des informations officielles : changelog et pages API, chargement, conversation. Cache d’une heure ; `lm_status(refresh_updates=true)` force la lecture distante. `LM_MCP_UPDATE_TTL=0` vérifie en ligne à chaque appel.
-4. Comparaison de l’empreinte application/moteurs et du code/dépendances du connecteur avec le dernier test réel. Un changement invalide la validation et demande un nouveau test.
-5. Contrôle des capacités utiles avant l’action, puis vérification de l’instance après chargement/déchargement. Les paramètres de chargement non appliqués produisent une erreur MCP avec l’état réellement obtenu.
+3. Synchronisation automatique du dépôt documentaire complet si son cache a expiré (une heure par défaut). Les sources hors ligne sont signalées comme périmées.
+4. Contrôle de la fraîcheur des informations officielles : changelog et pages API, chargement, conversation. Cache d’une heure ; `lm_status(refresh_updates=true)` force la lecture distante. `LM_MCP_UPDATE_TTL=0` vérifie en ligne à chaque appel.
+5. Comparaison de l’empreinte application/moteurs et du code/dépendances du connecteur avec le dernier test réel. Un changement invalide la validation et demande un nouveau test.
+6. Contrôle des capacités utiles avant l’action, puis vérification de l’instance après chargement/déchargement. Les paramètres de chargement non appliqués produisent une erreur MCP avec l’état réellement obtenu.
 
 Chaque réponse comprend `ok`, `data` ou `error`, et `diagnostics`. Une erreur réseau ne devient jamais une déclaration « à jour ». Une mutation en timeout a un résultat inconnu : consulter l’état avant de la répéter. Les POST ne sont pas réessayés automatiquement.
 
@@ -76,7 +77,7 @@ Chaque réponse comprend `ok`, `data` ou `error`, et `diagnostics`. Une erreur r
 | `lm_integrations` | MCP configurés, programme disponible, permissions |
 | `lm_diagnose` | API, matériel, disque, instances, erreurs et signaux des journaux |
 | `lm_connections` | Enregistrer, tester et sélectionner des serveurs LM Studio |
-| `lm_docs` | Synchroniser, chercher et citer la documentation officielle |
+| `lm_docs` | Documentation complète, recherche, procédures, couverture, changements et sources |
 | `lm_model_config` | Schéma SDK installé, inspection et chargement avancé |
 | `lm_profiles` | Enregistrer et réutiliser des configurations de modèles |
 | `lm_mcp_config` | Prévisualiser/appliquer une configuration avec sauvegarde et contrôle de conflit |
@@ -127,7 +128,11 @@ Cet index appartient au connecteur ; il ne pilote pas les pièces jointes ni les
 
 `lm_connections` conserve des profils local, réseau privé ou HTTPS, teste `/api/v1/models`, puis sélectionne la connexion. Les jetons restent dans des variables `LM_REMOTE_*` ou `LM_STUDIO_*` référencées par le profil. Un profil distant désactive les commandes CLI locales ; il n’administre pas le système d’exploitation distant. Les opérations de retour au profil local restent accessibles même si la connexion sélectionnée est défaillante.
 
-`lm_docs(action="sync")` synchronise uniquement [le dépôt officiel de documentation](https://github.com/lmstudio-ai/docs), sans installer de logiciel. `search` trouve les pages, `read` fournit leurs lignes et une URL figée sur le commit, `guide` propose les procédures réglages/diagnostic/MCP/RAG/serveur. Les fichiers masqués ou non publiés sont exclus. La copie locale fonctionne hors ligne ; son commit et sa date de synchronisation sont affichés. Synchroniser avant de travailler sur une nouveauté. La documentation ne remplace pas les tests de l’interface installée.
+La documentation complète du [dépôt officiel](https://github.com/lmstudio-ai/docs) est automatiquement récupérée et indexée : **284 fichiers au snapshot validé**, avec provenance et empreintes. `lm_docs` fournit la recherche français/anglais, la lecture intégrale paginée, douze guides opérationnels, un dossier de références par demande (`brief`), la couverture outils/tests/limites et les changements amont. `scope="all"` permet aussi de consulter les brouillons et fichiers de support, clairement identifiés.
+
+Codex reçoit les instructions de consultation à la connexion. Une ressource d'orientation, des ressources de pages et le prompt `lmstudio_workflow` complètent les outils. La synchronisation vérifie la fraîcheur à chaque connexion/utilisation et utilise un cache d'une heure ; `sync` force le contrôle. En cas de réseau indisponible, la copie précédente reste accessible avec un avertissement. Les médias externes sont référencés par leurs liens.
+
+**La disponibilité d'une documentation ne prouve pas qu'une fonction est pilotable.** Chaque page dispose d'une correspondance explicite, invalidée si son contenu change. Voir [la documentation opérationnelle et ses limites](docs/documentation.md).
 
 ## Transport et n8n
 
@@ -143,7 +148,9 @@ Copier `.env.example` vers `.env` si nécessaire. Les variables d’environnemen
 - `LM_STUDIO_API_TOKEN` : jeton LM Studio si son authentification est activée.
 - `LMS_PATH` : chemin du binaire `lms`, par défaut `~/.lmstudio/bin/lms`.
 - `LM_MCP_TIMEOUT` : délai API, 300 secondes par défaut.
-- `LM_MCP_UPDATE_TTL` : durée du cache officiel en secondes, 3600 par défaut.
+- `LM_MCP_UPDATE_TTL` : durée du cache changelog/pages API en secondes, 3600 par défaut.
+- `LM_MCP_DOCS_AUTO_SYNC` : synchronisation documentaire automatique, `true` par défaut.
+- `LM_MCP_DOCS_TTL` : fraîcheur du dépôt documentaire en secondes, 3600 par défaut ; 0 force les contrôles distants.
 - `LM_MCP_STATE_DIR` : cache et preuves, `.state/` dans ce dossier par défaut.
 - `LM_MCP_ALLOWED_INTEGRATIONS` : ancienne autorisation globale par ID de plugin ; préférer les permissions exactes via `lm_mcp_config`.
 - `LM_MCP_CONFIG_PATH` : configuration MCP de LM Studio, par défaut `~/.lmstudio/mcp.json`.
@@ -157,6 +164,7 @@ Les jetons ne sont pas envoyés aux sites de vérification des versions. Le doss
 ./run.sh --diagnose
 .venv/bin/pytest -q
 .venv/bin/ruff check src tests scripts
+.venv/bin/python scripts/docs_smoke.py
 .venv/bin/python scripts/smoke_test.py
 .venv/bin/python scripts/operations_smoke.py
 .venv/bin/python scripts/server_smoke.py

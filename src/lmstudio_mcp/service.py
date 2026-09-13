@@ -18,12 +18,15 @@ from .storage import atomic_json, file_lock, read_json
 class Service:
     def __init__(self, client: Client):
         self.client = client
+        self.knowledge = Knowledge(client.settings)
 
     async def run(self, operation, **args):
         c = self.client
         # Serialize local mutations and inference so load/unload cannot race within this server.
         async with c.lock:
             try:
+                documentation = (await self.knowledge.metadata() if operation == "docs" and args.get("action") == "sync"
+                                 else await self.knowledge.ensure())
                 try:
                     models = await c.preflight(
                         require_api=operation not in {"status", "server", "runtime", "integrations", "diagnose",
@@ -35,7 +38,11 @@ class Service:
                         raise
                     models = []
                     c.current_health = {"api_error": str(exc), "api_v1": "unavailable"}
+                finally:
+                    c.current_health["documentation"] = documentation | self.knowledge.context(operation)
                 data = await self.dispatch(operation, models, **args)
+                if operation == "docs":
+                    c.current_health["documentation"] = await self.knowledge.metadata()
                 if isinstance(data, dict) and data.get("configuration_mismatches"):
                     journal(c, operation, "Requested configuration does not match effective model configuration")
                     return {"ok": False, "error": "Model loaded, but LM Studio did not apply the requested configuration",
@@ -52,7 +59,7 @@ class Service:
     async def dispatch(self, operation, models, **args):
         c = self.client
         if operation == "docs":
-            return await Knowledge(c.settings).run(**args)
+            return await self.knowledge.run(**args, prepared=True)
         if operation == "diagnose":
             return await diagnose(c, models, **args)
         if operation == "connections":

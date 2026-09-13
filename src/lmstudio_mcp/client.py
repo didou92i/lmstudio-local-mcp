@@ -88,7 +88,8 @@ class Client:
         self.current_health = {}
         self.runtime_status = {}
         source_hash = hashlib.sha256()
-        for path in sorted(Path(__file__).parent.glob("*.py")):
+        source_root = Path(__file__).parent
+        for path in sorted([*source_root.glob("*.py"), *(source_root / "data").glob("*.json")]):
             source_hash.update(path.name.encode() + path.read_bytes())
         self.connector_fingerprint = source_hash.hexdigest()
         self.dependency_versions = {name: package_version(name) for name in ("lmstudio", "mcp", "httpx", "pypdf", "python-docx")}

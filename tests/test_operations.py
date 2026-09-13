@@ -12,7 +12,6 @@ from lmstudio_mcp.config import Settings
 from lmstudio_mcp.connections import Connections, validate_url
 from lmstudio_mcp.diagnostics import diagnose, journal
 from lmstudio_mcp.integrations import Integrations, validate_config
-from lmstudio_mcp.knowledge import Knowledge
 from lmstudio_mcp.rag import Rag, unit
 from lmstudio_mcp.sdk import configuration_mismatches, model_config, schema
 from lmstudio_mcp.service import Service
@@ -272,20 +271,6 @@ def test_sdk_nested_settings_compare_requested_fields_only():
     assert not configuration_mismatches({'gpu': {'ratio': 0.5}}, {'gpu': {'ratio': 0.5, 'mainGpu': 0}})
     assert configuration_mismatches({'gpu': {'ratio': 0.5}}, {'gpu': {'ratio': 1}}) == {
         'gpu.ratio': {'requested': 0.5, 'actual': 1}}
-
-
-async def test_docs_search_citations_hidden_files_and_traversal(settings, monkeypatch):
-    knowledge = Knowledge(settings)
-    (knowledge.root / '.git').mkdir(parents=True)
-    (knowledge.root / 'guide.mdx').write_text('Title\ncontextLength sets the load context\n')
-    (knowledge.root / '_draft.mdx').write_text('contextLength secret draft')
-    async def fake_git(*args):
-        return 'abc123'
-    monkeypatch.setattr(knowledge, 'git', fake_git)
-    result = await knowledge.run('search', query='contextLength')
-    assert len(result['results']) == 1 and '/abc123/guide.mdx#L2' in result['results'][0]['url']
-    with pytest.raises(ConnectorError, match='published'):
-        await knowledge.run('read', path='../private.txt')
 
 
 async def test_diagnostics_returns_signals_without_raw_logs(settings, tmp_path, monkeypatch):

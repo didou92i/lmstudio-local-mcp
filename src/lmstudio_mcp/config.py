@@ -14,6 +14,8 @@ class Settings(BaseModel):
     app_plist: Path = Path("/Applications/LM Studio.app/Contents/Info.plist")
     state_dir: Path = ROOT / ".state"
     update_ttl: int = Field(default=3600, ge=0)
+    docs_auto_sync: bool = True
+    docs_ttl: int = Field(default=3600, ge=0)
     timeout: float = Field(default=300, gt=0, le=3600)
     allowed_integrations: list[str] = []
     mcp_config_path: Path = Path.home() / ".lmstudio/mcp.json"
@@ -36,6 +38,8 @@ class Settings(BaseModel):
             lms_path=Path(os.getenv("LMS_PATH", str(Path.home() / ".lmstudio/bin/lms"))),
             state_dir=Path(os.getenv("LM_MCP_STATE_DIR", str(ROOT / ".state"))),
             update_ttl=int(os.getenv("LM_MCP_UPDATE_TTL", "3600")),
+            docs_auto_sync=os.getenv("LM_MCP_DOCS_AUTO_SYNC", "true").lower() not in {"0", "false", "no"},
+            docs_ttl=int(os.getenv("LM_MCP_DOCS_TTL", "3600")),
             timeout=float(os.getenv("LM_MCP_TIMEOUT", "300")),
             allowed_integrations=[s.strip() for s in os.getenv("LM_MCP_ALLOWED_INTEGRATIONS", "").split(",") if s.strip()],
             mcp_config_path=Path(os.getenv("LM_MCP_CONFIG_PATH", str(Path.home() / ".lmstudio/mcp.json"))),
