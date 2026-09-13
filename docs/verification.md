@@ -10,7 +10,7 @@
 
 ## Résultats confirmés
 
-- **63 tests automatiques réussis**, Ruff sans erreur. Réinstallation depuis `uv.lock` vérifiée hors ligne.
+- **65 tests automatiques réussis**, Ruff sans erreur. Réinstallation depuis `uv.lock` vérifiée hors ligne. Le premier contrôle des mises à jour est aussi testé sur une machine démarrée depuis moins d’une minute ; seuls les essais suivants après un échec sont temporisés.
 - MCP stdio : initialisation, découverte des **28 outils**, appels réels avec le client officiel.
 - MCP HTTP Streamable : découverte des 28 outils et appels répétés réussis. Arrêt/redémarrage réel du serveur LM Studio vérifié, API de nouveau accessible ; serveur laissé démarré et processus HTTP de test arrêté.
 - Chargement/déchargement : existence puis absence des instances vérifiées ; les instances créées par les tests ont été nettoyées.

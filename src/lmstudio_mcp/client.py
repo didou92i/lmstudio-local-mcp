@@ -83,7 +83,7 @@ class Client:
         self.lock = asyncio.Lock()
         self.updates_lock = asyncio.Lock()
         self.updates = {}
-        self.last_probe = 0.0
+        self.last_probe = None
         self.last_app_version = None
         self.current_health = {}
         self.runtime_status = {}
@@ -145,7 +145,8 @@ class Client:
             if not force and self.updates.get("status") == "checked" and age < self.settings.update_ttl:
                 return {**self.updates, "cached": True}
             # Retry failures at most once per minute; report them as unknown, never up-to-date.
-            if not force and self.updates.get("status") != "checked" and time.monotonic() - self.last_probe < 60:
+            if (not force and self.updates.get("status") != "checked" and self.last_probe is not None
+                    and time.monotonic() - self.last_probe < 60):
                 return {**self.updates, "cached": True}
             self.last_probe = time.monotonic()
             try:

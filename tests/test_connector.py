@@ -86,6 +86,26 @@ async def test_per_call_preflight_and_cached_upstream(rig):
             assert request.headers["authorization"] == "Bearer SECRET-TOKEN"
 
 
+@pytest.mark.parametrize("uptime", [0.0, 5.0])
+async def test_first_update_probe_runs_on_fresh_boot_then_throttles_failures(rig, monkeypatch, uptime):
+    client, _, state, calls = rig
+    state["remote_fail"] = True
+    # Patch this module's clock rather than asyncio's global monotonic clock.
+    import time
+    from types import SimpleNamespace
+    clock = SimpleNamespace(time=time.time, monotonic=lambda: uptime)
+    monkeypatch.setattr("lmstudio_mcp.client.time", clock)
+    first = await client.check_updates()
+    assert first["status"] == "unknown" and not first["cached"]
+    requests = len(calls)
+    assert requests == 4
+    assert (await client.check_updates())["cached"]
+    assert len(calls) == requests
+    clock.monotonic = lambda: uptime + 61
+    assert not (await client.check_updates())["cached"]
+    assert len(calls) == requests * 2
+
+
 @pytest.mark.parametrize("code", [401, 403, 500])
 async def test_http_failure_blocks_mutation_and_redacts(rig, code):
     _, service, state, calls = rig
